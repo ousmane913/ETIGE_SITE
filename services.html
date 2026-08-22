@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Les 7 pôles de compétence ETIGE : réseaux, pylônes, caméras, fibre optique, désenclavement numérique, génie civil et énergie.">
+  <title>Services — ETIGE | 7 pôles de compétence</title>
+
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  
+  <!-- Anti-flicker script : applique le thème avant le rendu de la page -->
+  <script>
+    (function(){
+      try {
+        var stored = localStorage.getItem("etige-theme");
+        if (stored === "light" || stored === "dark") {
+          document.documentElement.setAttribute("data-theme", stored);
+        } else if (window.matchMedia("(prefers-color-scheme: light)").matches) {
+          document.documentElement.setAttribute("data-theme", "light");
+        }
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+
+  <main id="main-content">
+
+    <!-- ── PAGE HERO ─────────────────────────── -->
+    <section class="page-hero bg-hero bg-grid" aria-labelledby="services-title">
+      <div class="container">
+        <div style="display:grid;gap:3rem;align-items:center;">
+
+          <style>
+            @media (min-width:1024px) { .services-hero-grid { grid-template-columns:1fr 1fr; } }
+          </style>
+          <div class="services-hero-grid" style="display:grid;gap:3rem;align-items:center;">
+
+            <div class="reveal">
+              <p class="label" aria-hidden="true">SERVICES</p>
+              <h1 id="services-title" class="heading-1" style="margin-top:1rem;margin-bottom:1.25rem;">Un écosystème de compétences</h1>
+              <p style="font-size:var(--text-lg);color:var(--color-text-muted);line-height:1.7;max-width:36rem;">
+                Sept pôles techniques interconnectés — conçus pour répondre aux exigences des infrastructures critiques, du déploiement réseau à l'alimentation énergétique de site.
+              </p>
+            </div>
+
+            <div class="reveal reveal--delay-2" aria-hidden="true">
+              <div data-network-diagram
+                   style="width:100%;aspect-ratio:1;max-width:28rem;margin-inline:auto;border-radius:var(--radius-lg);border:1px solid var(--color-border);background:rgba(26,29,33,0.3);backdrop-filter:blur(4px);">
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── SERVICES DÉTAIL ────────────────────── -->
+    <section class="section bg-base" aria-label="Détail des 7 pôles de compétence">
+      <div class="container" style="display:flex;flex-direction:column;gap:2rem;">
+
+        <!-- NET -->
+        <article id="NET" class="card card--accent-left reveal" style="scroll-margin-top:calc(var(--header-h) + 1rem);overflow:hidden;padding:2rem 2.5rem;" aria-labelledby="service-net-title">
+          <div style="display:grid;gap:2rem;align-items:center;">
+            <style>@media (min-width:1024px) { #NET .service-detail-grid { grid-template-columns:1fr 1fr; } }</style>
+            <div class="service-detail-grid" style="display:grid;gap:2rem;align-items:center;">
+              <div>
+                <span style="font-family:var(--font-mono);font-size:var(--text-2xl);font-weight:700;color:var(--color-accent);">NET</span>
+                <h2 id="service-net-title" class="heading-3" style="margin-top:1rem;margin-bottom:1rem;">Réseaux informatiques</h2>
+                <p style="color:var(--color-text-muted);line-height:1.7;margin-bottom:1rem;">
+                  Conception, déploiement et maintenance de réseaux informatiques pour environnements industriels, portuaires et institutionnels. Nous assurons la mise en place de topologies LAN/WAN robustes, la segmentation réseau, le câblage structuré et la supervision des infrastructures critiques.
+                </p>
+                <p style="color:var(--color-text-muted);line-height:1.7;">
+                  Notre expertise couvre l'intégration de switchs, routeurs, points d'accès Wi-Fi et la sécurisation des flux de données. Chaque déploiement est documenté et traçable pour faciliter la maintenance et les évolutions futures.
+                </p>
+                <ul style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:1.5rem;">
+                  <li style="padding:0.25rem 0.75rem;border:1px solid var(--color-border-md);border-radius:var(--radius-sm);font-family:var(--font-mono);font-size:var(--text-xs);color:var(--color-text-muted);">LAN / WAN</li>
+                  <li style="padding:0.25rem 0.75rem;border:1px solid var(--color-border-md);border-radius:var(--radius-sm);font-family:var(--font-mono);font-size:var(--text-xs);color:var(--color-text-muted);">Câblage structuré</li>
+                  <li style="padding:0.25rem 0.75rem;border:1px solid var(--color-border-md);border-radius:var(--radius-sm);font-family:var(--font-mono);font-size:var(--text-xs);color:var(--color-text-muted);">Supervision</li>
+                </ul>
+              </div>
+              <div class="service-img" style="aspect-ratio:4/3;">
+                <img src="assets/images/service-net-datacenter.png" alt="Ingénieur réseau en salle serveurs — ETIGE" loading="lazy">
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- COM -->
+        <article id="COM" class="card reveal" style="scroll-margin-top:calc(var(--header-h) + 1rem);overflow:hidden;padding:2rem 2.5rem;" aria-labelledby="service-com-title">
+          <style>@media (min-width:1024px) { #COM .service-detail-grid { grid-template-columns:1fr 1fr; } }</style>
+          <div class="service-detail-grid" style="display:grid;gap:2rem;align-items:center;">
+            <div class="service-img" style="aspect-ratio:4/3;order:1;">
+              <img src="assets/images/service-pyl-pylone.png" alt="Pylône télécom en installation — ETIGE" loading="lazy">
+            </div>
+            <div style="order:2;">
+              <span style="font-family:var(--font-mono);font-size:var(--text-2xl);font-weight:700;color:var(--color-accent);">COM</span>
+              <h2 id="service-com-title" class="heading-3" style="margin-top:1rem;margin-bottom:1rem;">Création de pylônes télécom</h2>
+              <p style="color:var(--color-text-muted);line-height:1.7;margin-bottom:1rem;">
+                Fabrication, levage et installation de pylônes télécom pour sites de relais, antennes et équipements de transmission. Nos pylônes de type FA2, FA4, FA6 et FA8 sont dimensionnés selon les contraintes du site et les charges d'équipement prévues.
+              </p>
+              <p style="color:var(--color-text-muted);line-height:1.7;">
+                De la fondation béton au habillage final, nous maîtrisons l'ensemble de la chaîne — y compris l'accès sécurisé, la mise à la terre et le raccordement des lignes de montée.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <!-- CAM -->
+        <article id="CAM" class="card reveal" style="scroll-margin-top:calc(var(--header-h) + 1rem);overflow:hidden;padding:2rem 2.5rem;" aria-labelledby="service-cam-title">
+          <style>@media (min-width:1024px) { #CAM .service-detail-grid { grid-template-columns:1fr 1fr; } }</style>
+          <div class="service-detail-grid" style="display:grid;gap:2rem;align-items:center;">
+            <div>
+              <span style="font-family:var(--font-mono);font-size:var(--text-2xl);font-weight:700;color:var(--color-accent);">CAM</span>
+              <h2 id="service-cam-title" class="heading-3" style="margin-top:1rem;margin-bottom:1rem;">Installation & configuration de caméras</h2>
+              <p style="color:var(--color-text-muted);line-height:1.7;margin-bottom:1rem;">
+                Déploiement de systèmes de vidéosurveillance IP pour sites industriels, entrepôts et espaces publics. Sélection des caméras adaptées, câblage, paramétrage NVR/DVR et accès distant sécurisé.
+              </p>
+              <p style="color:var(--color-text-muted);line-height:1.7;">
+                Nous intégrons la vidéosurveillance dans l'écosystème réseau existant, avec une attention particulière à la bande passante, au stockage et à la conformité réglementaire.
+              </p>
+            </div>
+            <div class="service-img" style="aspect-ratio:4/3;">
+              <img src="assets/images/service-cam-surveillance.png" alt="Caméra de vidéosurveillance IP — ETIGE" loading="lazy">
+            </div>
+          </div>
+        </article>
+
+        <!-- FO -->
+        <article id="FO" class="card reveal" style="scroll-margin-top:calc(var(--header-h) + 1rem);overflow:hidden;padding:2rem 2.5rem;" aria-labelledby="service-fo-title">
+          <style>@media (min-width:1024px) { #FO .service-detail-grid { grid-template-columns:1fr 1fr; } }</style>
+          <div class="service-detail-grid" style="display:grid;gap:2rem;align-items:center;">
+            <div class="service-img" style="aspect-ratio:4/3;order:1;">
+              <img src="assets/images/service-fib-fibre.png" alt="Technicien fibre optique en intervention — ETIGE" loading="lazy">
+            </div>
+            <div style="order:2;">
+              <span style="font-family:var(--font-mono);font-size:var(--text-2xl);font-weight:700;color:var(--color-accent);">FO</span>
+              <h2 id="service-fo-title" class="heading-3" style="margin-top:1rem;margin-bottom:1rem;">Déploiement de fibre optique</h2>
+              <p style="color:var(--color-text-muted);line-height:1.7;margin-bottom:1rem;">
+                Tirage, épissurage et raccordement de fibre optique pour backbone et distribution. Nous intervenons sur les tronçons aériens, souterrains et en fourreaux, avec mesure OTDR et documentation des points de terminaison.
+              </p>
+              <p style="color:var(--color-text-muted);line-height:1.7;">
+                Notre savoir-faire couvre les raccordements FTTH/FTTO, la pose de boîtiers de brassage et l'intégration dans les armoires de distribution existantes.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <!-- ZON -->
+        <article id="ZON" class="card reveal" style="scroll-margin-top:calc(var(--header-h) + 1rem);overflow:hidden;padding:2rem 2.5rem;" aria-labelledby="service-zon-title">
+          <style>@media (min-width:1024px) { #ZON .service-detail-grid { grid-template-columns:1fr 1fr; } }</style>
+          <div class="service-detail-grid" style="display:grid;gap:2rem;align-items:center;">
+            <div>
+              <span style="font-family:var(--font-mono);font-size:var(--text-2xl);font-weight:700;color:var(--color-accent);">ZON</span>
+              <h2 id="service-zon-title" class="heading-3" style="margin-top:1rem;margin-bottom:1rem;">Désenclavement numérique</h2>
+              <p style="color:var(--color-text-muted);line-height:1.7;margin-bottom:1rem;">
+                Solutions de connectivité pour zones sans accès internet fiable — relais radio, liaisons point-à-point et micro-réseaux autonomes. Nous connectons les sites isolés aux infrastructures de transport de données.
+              </p>
+              <p style="color:var(--color-text-muted);line-height:1.7;">
+                Chaque projet est dimensionné selon la topographie, la distance et les besoins en débit, avec des solutions évolutives et maintenables sur le long terme.
+              </p>
+            </div>
+            <div class="service-img" style="aspect-ratio:4/3;">
+              <img src="assets/images/service-zon-desenclavement.jpg" alt="Antenne relais pour zone rurale — ETIGE" loading="lazy">
+            </div>
+          </div>
+        </article>
+
+        <!-- GC -->
+        <article id="GC" class="card reveal" style="scroll-margin-top:calc(var(--header-h) + 1rem);overflow:hidden;padding:2rem 2.5rem;" aria-labelledby="service-gc-title">
+          <style>@media (min-width:1024px) { #GC .service-detail-grid { grid-template-columns:1fr 1fr; } }</style>
+          <div class="service-detail-grid" style="display:grid;gap:2rem;align-items:center;">
+            <div class="service-img" style="aspect-ratio:4/3;order:1;">
+              <img src="assets/images/service-gen-genie-civil.jpg" alt="Chantier génie civil — fondations pylône ETIGE" loading="lazy">
+            </div>
+            <div style="order:2;">
+              <span style="font-family:var(--font-mono);font-size:var(--text-2xl);font-weight:700;color:var(--color-accent);">GC</span>
+              <h2 id="service-gc-title" class="heading-3" style="margin-top:1rem;margin-bottom:1rem;">Génie civil</h2>
+              <p style="color:var(--color-text-muted);line-height:1.7;margin-bottom:1rem;">
+                Travaux de génie civil pour supports d'infrastructure : fondations de pylônes, tranchées, chambres de tirage, locaux techniques et aménagements de site. Nous assurons la cohérence entre les contraintes civiles et les exigences télécom.
+              </p>
+              <p style="color:var(--color-text-muted);line-height:1.7;">
+                Notre approche intégrée évite les interfaces multiples et garantit la conformité des ouvrages aux charges et normes applicables.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <!-- ENR -->
+        <article id="ENR" class="card reveal" style="scroll-margin-top:calc(var(--header-h) + 1rem);overflow:hidden;padding:2rem 2.5rem;" aria-labelledby="service-enr-title">
+          <style>@media (min-width:1024px) { #ENR .service-detail-grid { grid-template-columns:1fr 1fr; } }</style>
+          <div class="service-detail-grid" style="display:grid;gap:2rem;align-items:center;">
+            <div>
+              <span style="font-family:var(--font-mono);font-size:var(--text-2xl);font-weight:700;color:var(--color-accent);">ENR</span>
+              <h2 id="service-enr-title" class="heading-3" style="margin-top:1rem;margin-bottom:1rem;">Énergie</h2>
+              <p style="color:var(--color-text-muted);line-height:1.7;margin-bottom:1rem;">
+                Solutions énergétiques pour sites télécom et industriels : panneaux solaires, régulateurs MPPT, armoires électriques, onduleurs et systèmes d'alimentation secourue. Nous dimensionnons les installations pour garantir la continuité de service.
+              </p>
+              <p style="color:var(--color-text-muted);line-height:1.7;">
+                De l'armoire de distribution au câblage complet, nous assurons une alimentation fiable et documentée pour chaque équipement critique du site.
+              </p>
+            </div>
+            <div class="service-img" style="aspect-ratio:4/3;">
+              <img src="assets/images/service-enr-solaire.png" alt="Installation solaire et armoire électrique — ETIGE" loading="lazy">
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ── CTA ────────────────────────────────── -->
+    <section class="section--sm border-top bg-raised" aria-labelledby="services-cta-title">
+      <div class="container" style="text-align:center;" class="reveal">
+        <h2 id="services-cta-title" class="heading-3 reveal" style="margin-bottom:1rem;">Un projet multi-pôles ?</h2>
+        <p style="color:var(--color-text-muted);margin-bottom:2rem;max-width:36rem;margin-inline:auto;" class="reveal">
+          Contactez-nous pour une étude technique adaptée à vos contraintes de site.
+        </p>
+        <div style="display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;" class="reveal">
+          <a href="contact.html" class="btn btn-primary">Nous contacter</a>
+          <a href="realisations.html" class="btn btn-outline">Voir nos réalisations</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="js/network-diagram.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

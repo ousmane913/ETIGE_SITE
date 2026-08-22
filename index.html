@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="ETIGE — Entreprise des Travaux Télécom, Informatique, Génie Civil et Énergie. Infrastructure télécom, réseaux et énergie à Abidjan. Sous-traitant du Port Autonome d'Abidjan.">
+  <meta name="keywords"
+    content="ETIGE, télécom, pylônes, fibre optique, réseaux, énergie, génie civil, Abidjan, Côte d'Ivoire">
+  <meta name="author" content="ETIGE">
+  <meta property="og:title" content="ETIGE — Infrastructure Télécom & Énergie">
+  <meta property="og:description"
+    content="Télécom, Réseaux, Énergie, Génie Civil — Expertise technique au service des infrastructures critiques.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_CI">
+  <title>ETIGE — Télécom, Réseaux, Énergie & Génie Civil | Abidjan</title>
+
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+
+  <!-- Anti-flicker script : applique le thème avant le rendu de la page -->
+  <script>
+    (function () {
+      try {
+        var stored = localStorage.getItem("etige-theme");
+        if (stored === "light" || stored === "dark") {
+          document.documentElement.setAttribute("data-theme", stored);
+        } else if (window.matchMedia("(prefers-color-scheme: light)").matches) {
+          document.documentElement.setAttribute("data-theme", "light");
+        }
+      } catch (e) { }
+    })();
+  </script>
+</head>
+
+<body>
+
+  <!-- ════════════════════════════════════════════
+       Header & nav injectés par components.js
+       ════════════════════════════════════════════ -->
+
+  <main id="main-content">
+
+    <!-- ── HERO ────────────────────────────────── -->
+    <section class="hero bg-hero bg-grid" aria-labelledby="hero-title">
+
+      <!-- Texte centré dans le container -->
+      <div class="container hero__content">
+        <div class="hero__text-block reveal">
+          <p class="label" aria-hidden="true">INFRASTRUCTURE</p>
+          <h1 id="hero-title" class="heading-1" style="margin-top:1.5rem;margin-bottom:1.5rem;">
+            Construire les <span class="text-accent">connexions</span> qui font tourner l'infrastructure
+          </h1>
+          <p
+            style="font-size:var(--text-lg);color:var(--color-text-muted);max-width:42rem;line-height:1.7;margin-bottom:2rem;">
+            Télécom, réseaux informatiques, énergie et génie civil — une expertise intégrée au service des sites
+            critiques et des projets d'envergure à Abidjan et en Côte d'Ivoire.
+          </p>
+          <div style="display:flex;flex-wrap:wrap;gap:1rem;">
+            <a href="realisations.html" class="btn btn-primary">
+              Découvrir nos réalisations
+              <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+            <a href="contact.html#devis" class="btn btn-outline">Demander un devis</a>
+          </div>
+
+          <ul class="hero__kpis" aria-label="Chiffres clés">
+            <li><span class="accent">7</span> pôles de compétence</li>
+            <li><span class="accent">2022</span> — Abidjan, CI</li>
+            <li><span class="accent"></span></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Diagramme réseau pleine largeur -->
+      <div class="hero__diagram-full reveal reveal--delay-2" aria-hidden="true">
+        <div class="hero__diagram-box">
+          <div data-network-diagram class="hero__diagram-canvas"></div>
+          <div class="hero__chip hero__chip--tl card" style="padding:0.75rem 1rem;">
+            <span style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--color-text-muted);">NŒUDS
+              ACTIFS</span>
+            <span
+              style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--color-accent);margin-left:0.5rem;">7/7</span>
+          </div>
+          <div class="hero__chip hero__chip--br card" style="padding:0.75rem 1rem;">
+            <span style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--color-accent);">STATUS</span>
+            <span
+              style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--color-text-muted);margin-left:0.5rem;">OPÉRATIONNEL</span>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ── BAND DE CRÉDIBILITÉ ────────────────── -->
+    <section class="credibility-band reveal" aria-label="Référence institutionnelle">
+      <div class="container">
+        <div class="credibility-band__inner">
+          <div class="credibility-band__badge">
+            <div class="credibility-band__icon" aria-hidden="true">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                  d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+            </div>
+            <p style="font-family:var(--font-mono);font-size:var(--text-sm);">
+              <strong class="text-accent"></strong>
+              <span class="text-muted"></span>
+            </p>
+          </div>
+          <span class="credibility-band__sep" aria-hidden="true">|</span>
+          <p style="font-size:var(--text-sm);color:var(--color-text-muted);max-width:32rem;">
+            Référence institutionnelle garantissant rigueur technique, conformité et fiabilité sur les chantiers à
+            enjeu.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 7 PÔLES ────────────────────────────── -->
+    <section class="section bg-base" aria-labelledby="poles-title">
+      <div class="container">
+
+        <header class="section-header section-header--center reveal">
+          <p class="label label--center" aria-hidden="true">COMPÉTENCES</p>
+          <h2 id="poles-title" class="heading-2" style="margin-top:1rem;margin-bottom:1rem;">7 pôles interconnectés</h2>
+          <p class="text-muted" style="max-width:40rem;margin-inline:auto;">
+            Un système cohérent de compétences — de la fibre au génie civil, de l'énergie à la vidéosurveillance.
+          </p>
+        </header>
+
+        <div class="poles-grid">
+
+          <!-- NET — vedette -->
+          <article class="card pole-featured reveal" style="grid-column:1/-1;" aria-labelledby="pole-net-title">
+            <div class="pole-featured__inner">
+              <div style="padding:2rem 2.5rem;display:flex;flex-direction:column;justify-content:center;">
+                <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1rem;">
+                  <span class="pole-card__code">NET</span>
+                  <svg width="32" height="32" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    style="color:rgba(227,30,36,0.5);" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                      d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                  </svg>
+                </div>
+                <h3 id="pole-net-title" class="heading-3" style="margin-bottom:0.75rem;">Réseaux informatiques</h3>
+                <p style="font-size:var(--text-sm);color:var(--color-text-muted);line-height:1.7;">
+                  Conception, déploiement et maintenance de réseaux LAN/WAN pour environnements industriels et
+                  institutionnels.
+                </p>
+                <ul style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:1.25rem;">
+                  <li
+                    style="padding:0.25rem 0.75rem;border:1px solid var(--color-border-md);border-radius:var(--radius-sm);font-family:var(--font-mono);font-size:var(--text-xs);color:var(--color-text-muted);">
+                    LAN / WAN</li>
+                  <li
+                    style="padding:0.25rem 0.75rem;border:1px solid var(--color-border-md);border-radius:var(--radius-sm);font-family:var(--font-mono);font-size:var(--text-xs);color:var(--color-text-muted);">
+                    Câblage structuré</li>
+                  <li
+                    style="padding:0.25rem 0.75rem;border:1px solid var(--color-border-md);border-radius:var(--radius-sm);font-family:var(--font-mono);font-size:var(--text-xs);color:var(--color-text-muted);">
+                    Supervision</li>
+                </ul>
+                <a href="services.html#NET" class="pole-card__detail-link"
+                  aria-label="Détail du pôle Réseaux informatiques">DÉTAIL →</a>
+              </div>
+              <div class="service-img" style="aspect-ratio:16/10;border-radius:0 var(--radius-lg) var(--radius-lg) 0;">
+                <img src="assets/images/service-net-datacenter.png" alt="Ingénieur réseau en salle serveurs"
+                  loading="lazy">
+              </div>
+            </div>
+          </article>
+
+          <!-- COM -->
+          <article class="card card--glow reveal reveal--delay-1" aria-labelledby="pole-com-title"
+            style="overflow:hidden;">
+            <div class="service-img" style="aspect-ratio:16/10;">
+              <img src="assets/images/service-pyl-pylone.png" alt="Pylônes télécom en installation" loading="lazy">
+            </div>
+            <div style="padding:1.5rem;">
+              <span class="pole-card__code-sm">COM</span>
+              <h3 id="pole-com-title" class="heading-4" style="margin-top:0.75rem;margin-bottom:0.5rem;">Pylônes télécom
+              </h3>
+              <p style="font-size:var(--text-sm);color:var(--color-text-muted);">Création et installation de pylônes
+                pour sites télécom et relais de signal.</p>
+              <a href="services.html#COM" class="pole-card__detail-link"
+                aria-label="Détail du pôle Pylônes télécom">DÉTAIL →</a>
+            </div>
+          </article>
+
+          <!-- CAM -->
+          <article class="card card--glow reveal reveal--delay-2" aria-labelledby="pole-cam-title"
+            style="overflow:hidden;">
+            <div class="service-img" style="aspect-ratio:16/10;">
+              <img src="assets/images/service-cam-surveillance.png" alt="Caméra de vidéosurveillance IP" loading="lazy">
+            </div>
+            <div style="padding:1.5rem;">
+              <span class="pole-card__code-sm">CAM</span>
+              <h3 id="pole-cam-title" class="heading-4" style="margin-top:0.75rem;margin-bottom:0.5rem;">
+                Vidéosurveillance</h3>
+              <p style="font-size:var(--text-sm);color:var(--color-text-muted);">Installation et configuration de
+                systèmes de caméras de sécurité IP.</p>
+              <a href="services.html#CAM" class="pole-card__detail-link"
+                aria-label="Détail du pôle Vidéosurveillance">DÉTAIL →</a>
+            </div>
+          </article>
+
+          <!-- FO -->
+          <article class="card card--glow reveal reveal--delay-3" aria-labelledby="pole-fo-title"
+            style="overflow:hidden;">
+            <div class="service-img" style="aspect-ratio:16/10;">
+              <img src="assets/images/service-fib-fibre.png" alt="Technicien fibre optique en intervention"
+                loading="lazy">
+            </div>
+            <div style="padding:1.5rem;">
+              <span class="pole-card__code-sm">FO</span>
+              <h3 id="pole-fo-title" class="heading-4" style="margin-top:0.75rem;margin-bottom:0.5rem;">Fibre optique
+              </h3>
+              <p style="font-size:var(--text-sm);color:var(--color-text-muted);">Déploiement de backbone et
+                raccordements fibre pour haut débit.</p>
+              <a href="services.html#FO" class="pole-card__detail-link" aria-label="Détail du pôle Fibre optique">DÉTAIL
+                →</a>
+            </div>
+          </article>
+
+          <!-- ZON -->
+          <article class="card card--glow reveal" aria-labelledby="pole-zon-title" style="overflow:hidden;">
+            <div class="service-img" style="aspect-ratio:16/10;">
+              <img src="assets/images/service-zon-desenclavement.jpg" alt="Antenne relais pour zone rurale"
+                loading="lazy">
+            </div>
+            <div style="padding:1.5rem;">
+              <span class="pole-card__code-sm">ZON</span>
+              <h3 id="pole-zon-title" class="heading-4" style="margin-top:0.75rem;margin-bottom:0.5rem;">Désenclavement
+                digital</h3>
+              <p style="font-size:var(--text-sm);color:var(--color-text-muted);">Connectivité pour zones sans accès
+                internet — solutions sur mesure.</p>
+              <a href="services.html#ZON" class="pole-card__detail-link"
+                aria-label="Détail du pôle Désenclavement numérique">DÉTAIL →</a>
+            </div>
+          </article>
+
+          <!-- GC -->
+          <article class="card card--glow reveal reveal--delay-1" aria-labelledby="pole-gc-title"
+            style="overflow:hidden;">
+            <div class="service-img" style="aspect-ratio:16/10;">
+              <img src="assets/images/service-gen-genie-civil.jpg" alt="Chantier génie civil, fondations pylône"
+                loading="lazy">
+            </div>
+            <div style="padding:1.5rem;">
+              <span class="pole-card__code-sm">GC</span>
+              <h3 id="pole-gc-title" class="heading-4" style="margin-top:0.75rem;margin-bottom:0.5rem;">Génie civil
+              </h3>
+              <p style="font-size:var(--text-sm);color:var(--color-text-muted);">Travaux de génie civil pour supports
+                d'infrastructure et aménagements.</p>
+              <a href="services.html#GC" class="pole-card__detail-link" aria-label="Détail du pôle Génie civil">DÉTAIL
+                →</a>
+            </div>
+          </article>
+
+          <!-- ENR -->
+          <article class="card card--glow reveal reveal--delay-2" aria-labelledby="pole-enr-title"
+            style="overflow:hidden;">
+            <div class="service-img" style="aspect-ratio:16/10;">
+              <img src="assets/images/service-enr-solaire.png" alt="Installation solaire et armoire électrique"
+                loading="lazy">
+            </div>
+            <div style="padding:1.5rem;">
+              <span class="pole-card__code-sm">ENR</span>
+              <h3 id="pole-enr-title" class="heading-4" style="margin-top:0.75rem;margin-bottom:0.5rem;">Énergie</h3>
+              <p style="font-size:var(--text-sm);color:var(--color-text-muted);">Solutions énergétiques : solaire,
+                armoires électriques, alimentation de site.</p>
+              <a href="services.html#ENR" class="pole-card__detail-link" aria-label="Détail du pôle Énergie">DÉTAIL
+                →</a>
+            </div>
+          </article>
+
+        </div>
+
+        <div style="text-align:center;margin-top:3rem;" class="reveal">
+          <a href="services.html" class="btn btn-outline">Voir tous les services</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── APERÇU RÉALISATIONS ────────────────── -->
+    <section class="section" style="background-color:rgba(26,29,33,0.5);" aria-labelledby="realisations-title">
+      <div class="container">
+
+        <div
+          style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:1.5rem;margin-bottom:3rem;"
+          class="reveal">
+          <div>
+            <p class="label" aria-hidden="true">RÉALISATIONS</p>
+            <h2 id="realisations-title" class="heading-2" style="margin-top:1rem;">Chantiers & installations</h2>
+          </div>
+          <a href="realisations.html"
+            style="font-family:var(--font-mono);font-size:var(--text-sm);color:var(--color-accent);white-space:nowrap;"
+            aria-label="Voir toutes nos réalisations">TOUT VOIR →</a>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1.25rem;">
+
+          <figure class="reveal img-wrap card card--glow" style="overflow:hidden;">
+            <div class="img-crop" style="aspect-ratio:4/5;">
+              <img src="assets/images/pylone-fa6.jpg" alt="Pylône télécom FA6 — site côtier, Abidjan" loading="lazy"
+                class="img-cover">
+            </div>
+            <figcaption style="padding:1rem;background:var(--color-bg-raised);">
+              <span style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--color-accent);">PYLÔNE
+              </span>
+              <p style="font-size:var(--text-sm);color:var(--color-text);margin-top:0.25rem;">Pylône télécom type FA6 —
+                site côtier</p>
+            </figcaption>
+          </figure>
+
+
+
+          <figure class="reveal img-wrap card card--glow" style="overflow:hidden;">
+            <div class="img-crop" style="aspect-ratio:4/5;">
+              <img src="assets/images/serveur.jpg" alt="Infrastructure serveur et baie de brassage" loading="lazy"
+                class="img-cover">
+            </div>
+            <figcaption style="padding:1rem;background:var(--color-bg-raised);">
+              <span style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--color-accent);">RÉSEAU
+              </span>
+              <p style="font-size:var(--text-sm);color:var(--color-text);margin-top:0.25rem;">Infrastructure serveur et baie de brassage — centre de données</p>
+            </figcaption>
+          </figure>
+
+
+
+
+          <figure class="reveal reveal--delay-1 img-wrap card card--glow" style="overflow:hidden;">
+            <div class="img-crop" style="aspect-ratio:4/5;">
+              <img src="assets/images/realisation-fib-2.jpg" alt="Épissure fibre optique — intervention technique" loading="lazy"
+                class="img-cover">
+            </div>
+            <figcaption style="padding:1rem;background:var(--color-bg-raised);">
+              <span
+                style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--color-accent);">FIBRE</span>
+              <p style="font-size:var(--text-sm);color:var(--color-text);margin-top:0.25rem;">Épissure et brassage fibre optique — haute précision</p>
+            </figcaption>
+          </figure>
+
+          <figure class="reveal reveal--delay-2 img-wrap card card--glow" style="overflow:hidden;">
+            <div class="img-crop" style="aspect-ratio:4/5;">
+              <img src="assets/images/realisation-gen-1.jpg" alt="Chantier génie civil — construction bâtiment" loading="lazy"
+                class="img-cover">
+            </div>
+            <figcaption style="padding:1rem;background:var(--color-bg-raised);">
+              <span
+                style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--color-accent);">GÉNIE CIVIL</span>
+              <p style="font-size:var(--text-sm);color:var(--color-text);margin-top:0.25rem;">Travaux de construction — supervision de chantier</p>
+            </figcaption>
+          </figure>
+
+          <figure class="reveal reveal--delay-3 img-wrap card card--glow" style="overflow:hidden;">
+            <div class="img-crop" style="aspect-ratio:4/5;">
+              <img src="assets/images/realisation-enr-1.jpg" alt="Installation panneaux solaires — toiture" loading="lazy"
+                class="img-cover">
+            </div>
+            <figcaption style="padding:1rem;background:var(--color-bg-raised);">
+              <span style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--color-accent);">ÉNERGIE
+              </span>
+              <p style="font-size:var(--text-sm);color:var(--color-text);margin-top:0.25rem;">Installation solaire photovoltaïque — toiture</p>
+            </figcaption>
+          </figure>
+
+          <figure class="reveal img-wrap card card--glow" style="overflow:hidden;">
+            <div class="img-crop" style="aspect-ratio:4/5;">
+              <img src="assets/images/ChatGPT Image 16 août 2026, 18_34_25.png" alt="Connectivité rurale — antenne relais zone isolée" loading="lazy"
+                class="img-cover">
+            </div>
+            <figcaption style="padding:1rem;background:var(--color-bg-raised);">
+              <span style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--color-accent);">DÉSENCLAVEMENT
+              </span>
+              <p style="font-size:var(--text-sm);color:var(--color-text);margin-top:0.25rem;">Connectivité rurale — antenne relais zone isolée</p>
+            </figcaption>
+          </figure>
+
+          <figure class="reveal img-wrap card card--glow" style="overflow:hidden;">
+            <div class="img-crop" style="aspect-ratio:4/5;">
+              <img src="assets/images/realisation-cam-1.png" alt="Installation caméra vidéosurveillance" loading="lazy"
+                class="img-cover">
+            </div>
+            <figcaption style="padding:1rem;background:var(--color-bg-raised);">
+              <span style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--color-accent);">VIDÉOSURVEILLANCE
+              </span>
+              <p style="font-size:var(--text-sm);color:var(--color-text);margin-top:0.25rem;">Installation caméra IP — système de sécurité</p>
+            </figcaption>
+          </figure>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── POURQUOI ETIGE ─────────────────────── -->
+    <section class="section bg-base" aria-labelledby="why-title">
+      <div class="container">
+
+        <header class="section-header section-header--center reveal">
+          <p class="label label--center" aria-hidden="true">RÉASSURANCE</p>
+          <h2 id="why-title" class="heading-2" style="margin-top:1rem;">Pourquoi ETIGE</h2>
+        </header>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1.5rem;">
+
+          <div class="card reveal" style="padding:1.5rem;text-align:center;">
+            <div
+              style="width:3rem;height:3rem;margin-inline:auto;margin-bottom:1rem;border-radius:var(--radius-sm);border:1px solid rgba(227,30,36,0.3);display:flex;align-items:center;justify-content:center;">
+              <span style="font-family:var(--font-mono);font-size:var(--text-sm);color:var(--color-accent);">01</span>
+            </div>
+            <h3 class="heading-4" style="margin-bottom:0.5rem;">Expertise technique</h3>
+            <p style="font-size:var(--text-sm);color:var(--color-text-muted);">Équipes qualifiées sur l'ensemble de la
+              chaîne télécom, réseau et énergie.</p>
+          </div>
+
+          <div class="card reveal reveal--delay-1" style="padding:1.5rem;text-align:center;">
+            <div
+              style="width:3rem;height:3rem;margin-inline:auto;margin-bottom:1rem;border-radius:var(--radius-sm);border:1px solid rgba(227,30,36,0.3);display:flex;align-items:center;justify-content:center;">
+              <span style="font-family:var(--font-mono);font-size:var(--text-sm);color:var(--color-accent);">02</span>
+            </div>
+            <h3 class="heading-4" style="margin-bottom:0.5rem;">Fiabilité opérationnelle</h3>
+            <p style="font-size:var(--text-sm);color:var(--color-text-muted);">Respect des délais, traçabilité chantier
+              et conformité aux normes en vigueur.</p>
+          </div>
+
+          <div class="card reveal reveal--delay-2" style="padding:1.5rem;text-align:center;">
+            <div
+              style="width:3rem;height:3rem;margin-inline:auto;margin-bottom:1rem;border-radius:var(--radius-sm);border:1px solid rgba(227,30,36,0.3);display:flex;align-items:center;justify-content:center;">
+              <span style="font-family:var(--font-mono);font-size:var(--text-sm);color:var(--color-accent);">03</span>
+            </div>
+            <h3 class="heading-4" style="margin-bottom:0.5rem;">Référence institutionnelle</h3>
+            <p style="font-size:var(--text-sm);color:var(--color-text-muted);">Sous-traitant du Port Autonome d'Abidjan
+              — gage de sérieux et de rigueur.</p>
+          </div>
+
+          <div class="card reveal reveal--delay-3" style="padding:1.5rem;text-align:center;">
+            <div
+              style="width:3rem;height:3rem;margin-inline:auto;margin-bottom:1rem;border-radius:var(--radius-sm);border:1px solid rgba(227,30,36,0.3);display:flex;align-items:center;justify-content:center;">
+              <span style="font-family:var(--font-mono);font-size:var(--text-sm);color:var(--color-accent);">04</span>
+            </div>
+            <h3 class="heading-4" style="margin-bottom:0.5rem;">Couverture intégrée</h3>
+            <p style="font-size:var(--text-sm);color:var(--color-text-muted);">7 pôles complémentaires — un seul
+              interlocuteur pour vos projets multi-domaines.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── PARTENAIRES ───────────────────────────── -->
+    <section class="section bg-base" aria-label="Nos partenaires">
+      <div class="container">
+        <div class="reveal">
+          <h2 class="heading-2" style="text-align:center;margin-bottom:0.5rem;">Nos Partenaires</h2>
+          <p style="text-align:center;color:var(--color-text-muted);margin-bottom:3rem;"></p>
+          
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2rem;align-items:center;justify-items:center;">
+            <div style="text-align:center;padding:1.5rem;background:var(--color-surface);border-radius:8px;border:1px solid var(--color-border);width:100%;">
+              <h3 style="font-size:var(--text-base);font-weight:600;color:var(--color-text);margin:0;">BERNABÉ</h3>
+            </div>
+            <div style="text-align:center;padding:1.5rem;background:var(--color-surface);border-radius:8px;border:1px solid var(--color-border);width:100%;">
+              <h3 style="font-size:var(--text-base);font-weight:600;color:var(--color-text);margin:0;">DROCOLOR</h3>
+            </div>
+            <div style="text-align:center;padding:1.5rem;background:var(--color-surface);border-radius:8px;border:1px solid var(--color-border);width:100%;">
+              <h3 style="font-size:var(--text-base);font-weight:600;color:var(--color-text);margin:0;">BUREAU VERITAS</h3>
+            </div>
+            <div style="text-align:center;padding:1.5rem;background:var(--color-surface);border-radius:8px;border:1px solid var(--color-border);width:100%;">
+              <h3 style="font-size:var(--text-base);font-weight:600;color:var(--color-text);margin:0;">SOGELUX</h3>
+            </div>
+            <div style="text-align:center;padding:1.5rem;background:var(--color-surface);border-radius:8px;border:1px solid var(--color-border);width:100%;">
+              <h3 style="font-size:var(--text-base);font-weight:600;color:var(--color-text);margin:0;">ZYAT TECHNOLOGY</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CEUX QUI NOUS ONT FAIT CONFIANCE ───────── -->
+    <section class="section bg-hero" aria-label="Ceux qui nous ont fait confiance">
+      <div class="container">
+        <div class="reveal">
+          <h2 class="heading-2" style="text-align:center;margin-bottom:0.5rem;">Ceux qui nous ont fait confiance</h2>
+          <p style="text-align:center;color:var(--color-text-muted);margin-bottom:3rem;">Ils nous font confiance pour leurs projets</p>
+          
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2rem;align-items:center;justify-items:center;">
+            <div style="text-align:center;padding:2rem;background:var(--color-surface);border-radius:8px;border:1px solid var(--color-border);width:100%;">
+              <h3 style="font-size:var(--text-lg);font-weight:600;color:var(--color-text);margin:0;">LE PORT AUTONOME D'ABIDJAN (PAA)</h3>
+            </div>
+            <div style="text-align:center;padding:2rem;background:var(--color-surface);border-radius:8px;border:1px solid var(--color-border);width:100%;">
+              <h3 style="font-size:var(--text-lg);font-weight:600;color:var(--color-text);margin:0;">DMCI</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CTA CONTACT ────────────────────────── -->
+    <section class="section--sm border-top bg-raised" aria-labelledby="cta-title">
+      <div class="container">
+        <div style="display:grid;gap:3rem;align-items:center;" class="reveal">
+
+          <style>
+            @media (min-width:1024px) {
+              .cta-grid {
+                grid-template-columns: 1fr 1fr;
+              }
+            }
+          </style>
+          <div class="cta-grid" style="display:grid;gap:3rem;align-items:center;">
+            <div>
+              <p class="label" aria-hidden="true">CONTACT</p>
+              <h2 id="cta-title" class="heading-2" style="margin-top:1rem;margin-bottom:1rem;">Parlons de votre projet
+              </h2>
+              <p style="color:var(--color-text-muted);margin-bottom:2rem;">
+                Notre équipe est disponible pour étudier vos besoins en infrastructure télécom, réseau ou énergie.
+              </p>
+              <a href="contact.html" class="btn btn-primary">Nous contacter</a>
+            </div>
+
+            <div class="card" style="padding:2rem;">
+              <dl style="display:grid;gap:1.5rem;font-family:var(--font-mono);font-size:var(--text-sm);">
+                <div class="contact-info-row">
+                  <dt class="contact-info-label">Adresse</dt>
+                  <dd class="contact-info-value">Avenue 15, Rue 15 — Treichville, Abidjan</dd>
+                </div>
+                <div class="contact-info-row">
+                  <dt class="contact-info-label">Téléphone</dt>
+                  <dd class="contact-info-value">
+                    <a href="tel:+2252721538310">+225 27 21 53 83 10</a>
+                  </dd>
+                </div>
+                <div class="contact-info-row">
+                  <dt class="contact-info-label">Email</dt>
+                  <dd class="contact-info-value">
+                    <a href="mailto:info@etige-services.ci">info@etige-services.ci</a>
+                  </dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ════════════════════════════════════════════
+       Footer injecté par components.js
+       ════════════════════════════════════════════ -->
+
+  <script src="js/network-diagram.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

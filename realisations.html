@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Galerie des réalisations ETIGE : pylônes télécom, armoires électriques, câblage, énergie solaire — Abidjan, Côte d'Ivoire.">
+  <title>Réalisations — ETIGE | Galerie de chantiers</title>
+
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+
+  <!-- Anti-flicker script : applique le thème avant le rendu de la page -->
+  <script>
+    (function () {
+      try {
+        var stored = localStorage.getItem("etige-theme");
+        if (stored === "light" || stored === "dark") {
+          document.documentElement.setAttribute("data-theme", stored);
+        } else if (window.matchMedia("(prefers-color-scheme: light)").matches) {
+          document.documentElement.setAttribute("data-theme", "light");
+        }
+      } catch (e) { }
+    })();
+  </script>
+</head>
+
+<body>
+
+  <main id="main-content">
+
+    <!-- ── PAGE HERO ─────────────────────────── -->
+    <section class="page-hero bg-hero" aria-labelledby="realisations-title">
+      <div class="container reveal">
+        <p class="label" aria-hidden="true">PORTFOLIO</p>
+        <h1 id="realisations-title" class="heading-1" style="margin-top:1rem;margin-bottom:1rem;">Nos réalisations</h1>
+        <p style="font-size:var(--text-lg);color:var(--color-text-muted);max-width:40rem;line-height:1.7;">
+          Installations terrain documentées — pylônes, armoires, câblage et énergie. Filtrez par pôle de compétence.
+        </p>
+      </div>
+    </section>
+
+    <!-- ── BARRE DE FILTRES ────────────────────
+         Sticky sous le header fixe               -->
+    <div class="filter-wrapper sticky"
+      style="position:sticky;top:var(--header-h);z-index:40;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);background:var(--color-header-on);border-bottom:1px solid var(--color-border);">
+      <div class="container">
+        <div class="filter-bar" role="group" aria-label="Filtrer les réalisations par pôle">
+          <button class="filter-btn active" data-filter="all" aria-pressed="true">TOUS</button>
+          <button class="filter-btn" data-filter="NET" aria-pressed="false">NET</button>
+          <button class="filter-btn" data-filter="COM" aria-pressed="false">COM</button>
+          <button class="filter-btn" data-filter="CAM" aria-pressed="false">CAM</button>
+          <button class="filter-btn" data-filter="FO" aria-pressed="false">FO</button>
+          <button class="filter-btn" data-filter="ZON" aria-pressed="false">ZON</button>
+          <button class="filter-btn" data-filter="GC" aria-pressed="false">GC</button>
+          <button class="filter-btn" data-filter="ENR" aria-pressed="false">ENR</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── GALERIE ─────────────────────────────── -->
+    <section class="section bg-base" aria-label="Galerie de chantiers et installations">
+      <div class="container">
+        <div class="gallery-grid" id="gallery">
+          <figure class="gallery-item reveal card card--glow" data-category="NET" style="overflow:hidden;">
+            <div class="img-crop" style="aspect-ratio:4/3;">
+              <img src="assets/images/realisation-net-rack.jpg" alt="Baie de brassage et serveurs réseau" loading="lazy"
+                class="img-cover">
+            </div>
+            <figcaption style="padding:1.25rem;">
+              <span style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--color-accent);">NET</span>
+              <h3
+                style="font-size:var(--text-base);font-weight:600;color:var(--color-text);margin-top:0.25rem;margin-bottom:0.25rem;">
+                Infrastructure Réseau</h3>
+              <p style="font-size:var(--text-sm);color:var(--color-text-muted);">Installation de baie de brassage et
+                serveurs</p>
+            </figcaption>
+          </figure>
+
+
+          <figure class="gallery-item reveal card card--glow" data-category="NET" style="overflow:hidden;">
+            <div class="img-crop" style="aspect-ratio:4/3;">
+              <img src="assets/images/technicien-net-rack.jpg" alt="Technicien intervenant sur une baie de brassage"
+                loading="lazy" class="img-cover">
+            </div>
+            <figcaption style="padding:1.25rem;">
+              <span style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--color-accent);">NET</span>
+              <h3
+                style="font-size:var(--text-base);font-weight:600;color:var(--color-text);margin-top:0.25rem;margin-bottom:0.25rem;">
+                Maintenance Baie de Brassage</h3>
+              <p style="font-size:var(--text-sm);color:var(--color-text-muted);">Intervention technique sur un rack
+                réseau</p>
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item reveal card card--glow" data-category="NET" style="overflow:hidden;">
+            <div class="img-crop" style="aspect-ratio:4/3;">
+              <img src="assets/images/technicien-net-antenne.jpg"
+                alt="Technicien installant un équipement réseau extérieur" loading="lazy" class="img-cover">
+            </div>
+            <figcaption style="padding:1.25rem;">
+              <span style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--color-accent);">NET</span>
+              <h3
+                style="font-size:var(--text-base);font-weight:600;color:var(--color-text);margin-top:0.25rem;margin-bottom:0.25rem;">
+                Déploiement Équipement Radio</h3>
+              <p style="font-size:var(--text-sm);color:var(--color-text-muted);">Installation et raccordement d'antenne
+                réseau extérieure</p>
+            </figcaption>
+          </figure>
+
+
+          <figure class="gallery-item reveal card card--glow" data-category="CAM" style="overflow:hidden;">
+            <div class="img-crop" style="aspect-ratio:4/3;">
+              <img src="assets/images/realisation-cam-1.png" alt="Installation de caméra de sécurité" loading="lazy"
+                class="img-cover">
+            </div>
+            <figcaption style="padding:1.25rem;">
+              <span style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--color-accent);">CAM</span>
+              <h3
+                style="font-size:var(--text-base);font-weight:600;color:var(--color-text);margin-top:0.25rem;margin-bottom:0.25rem;">
+                Caméra IP &amp; Câblage</h3>
+              <p style="font-size:var(--text-sm);color:var(--color-text-muted);">Fixation murale et tirage de câbles
+                réseau</p>
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item reveal card card--glow" data-category="CAM" style="overflow:hidden;">
+            <div class="img-crop" style="aspect-ratio:4/3;">
+              <img src="assets/images/realisation-cam-2.png" alt="Configuration de la vidéosurveillance" loading="lazy"
+                class="img-cover">
+            </div>
+            <figcaption style="padding:1.25rem;">
+              <span style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--color-accent);">CAM</span>
+              <h3
+                style="font-size:var(--text-base);font-weight:600;color:var(--color-text);margin-top:0.25rem;margin-bottom:0.25rem;">
+                Supervision &amp; Paramétrage</h3>
+              <p style="font-size:var(--text-sm);color:var(--color-text-muted);">Configuration du NVR et tests
+                d'affichage sur site</p>
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item reveal card card--glow" data-category="CAM" style="overflow:hidden;">
+            <div class="img-crop" style="aspect-ratio:4/3;">
+              <img src="assets/images/realisation-cam-3.png" alt="Installation de caméra en extérieur" loading="lazy"
+                class="img-cover">
+            </div>
+            <figcaption style="padding:1.25rem;">
+              <span style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--color-accent);">CAM</span>
+              <h3
+                style="font-size:var(--text-base);font-weight:600;color:var(--color-text);margin-top:0.25rem;margin-bottom:0.25rem;">
+                Déploiement Extérieur</h3>
+              <p style="font-size:var(--text-sm);color:var(--color-text-muted);">Fixation de caméra dôme/tube en façade
+                de bâtiment</p>
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item reveal card card--glow" data-category="ENR" style="overflow:hidden;">
+            <div class="img-crop" style="aspect-ratio:4/3;">
+              <img src="assets/images/realisation-enr-1.jpg"
+                alt="Techniciens posant des panneaux solaires sur toiture en tuiles" loading="lazy" class="img-cover">
+            </div>
+            <figcaption style="padding:1.25rem;">
+              <span style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--color-accent);">ENR</span>
+              <h3
+                style="font-size:var(--text-base);font-weight:600;color:var(--color-text);margin-top:0.25rem;margin-bottom:0.25rem;">
+                Installation solaire en toiture</h3>
+              <p style="font-size:var(--text-sm);color:var(--color-text-muted);">Pose de panneaux photovoltaïques sur
+                toiture inclinée</p>
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item reveal card card--glow" data-category="COM" style="overflow:hidden;">
+            <div class="img-crop" style="aspect-ratio:4/3;">
+              <img src="assets/images/antenne-fa4.jpg" alt="Antenne FA4 installée sur pylône télécom" loading="lazy"
+                class="img-cover">
+            </div>
+            <figcaption style="padding:1.25rem;">
+              <span style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--color-accent);">COM</span>
+              <h3
+                style="font-size:var(--text-base);font-weight:600;color:var(--color-text);margin-top:0.25rem;margin-bottom:0.25rem;">
+                Antenne FA4</h3>
+              <p style="font-size:var(--text-sm);color:var(--color-text-muted);">Installation d'antenne FA4 sur pylône
+                télécom</p>
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item reveal card card--glow" data-category="COM" style="overflow:hidden;">
+            <div class="img-crop" style="aspect-ratio:4/3;">
+              <img src="assets/images/coffret-solaire.jpg" alt="Coffret solaire pour alimentation site télécom"
+                loading="lazy" class="img-cover">
+            </div>
+            <figcaption style="padding:1.25rem;">
+              <span style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--color-accent);">COM</span>
+              <h3
+                style="font-size:var(--text-base);font-weight:600;color:var(--color-text);margin-top:0.25rem;margin-bottom:0.25rem;">
+                Coffret Solaire</h3>
+              <p style="font-size:var(--text-sm);color:var(--color-text-muted);">Installation coffret solaire pour
+                alimentation autonome</p>
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item reveal card card--glow" data-category="COM" style="overflow:hidden;">
+            <div class="img-crop" style="aspect-ratio:4/3;">
+              <img src="assets/images/pylone-fa2.jpg" alt="Pylône FA2 structure télécom" loading="lazy"
+                class="img-cover">
+            </div>
+            <figcaption style="padding:1.25rem;">
+              <span style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--color-accent);">COM</span>
+              <h3
+                style="font-size:var(--text-base);font-weight:600;color:var(--color-text);margin-top:0.25rem;margin-bottom:0.25rem;">
+                Pylône FA2</h3>
+              <p style="font-size:var(--text-sm);color:var(--color-text-muted);">Structure pylône FA2 pour équipements
+                télécom</p>
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item reveal card card--glow" data-category="COM" style="overflow:hidden;">
+            <div class="img-crop" style="aspect-ratio:4/3;">
+              <img src="assets/images/pylone-fa2-site.jpg" alt="Pylône FA2 sur site avec installation complète"
+                loading="lazy" class="img-cover">
+            </div>
+            <figcaption style="padding:1.25rem;">
+              <span style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--color-accent);">COM</span>
+              <h3
+                style="font-size:var(--text-base);font-weight:600;color:var(--color-text);margin-top:0.25rem;margin-bottom:0.25rem;">
+                Pylône FA2 — Site complet</h3>
+              <p style="font-size:var(--text-sm);color:var(--color-text-muted);">Installation pylône FA2 avec équipements
+                sur site</p>
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item reveal card card--glow" data-category="COM" style="overflow:hidden;">
+            <div class="img-crop" style="aspect-ratio:4/3;">
+              <img src="assets/images/pylone-fa6.jpg" alt="Pylône FA6 structure télécom haute" loading="lazy"
+                class="img-cover">
+            </div>
+            <figcaption style="padding:1.25rem;">
+              <span style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--color-accent);">COM</span>
+              <h3
+                style="font-size:var(--text-base);font-weight:600;color:var(--color-text);margin-top:0.25rem;margin-bottom:0.25rem;">
+                Pylône FA6</h3>
+              <p style="font-size:var(--text-sm);color:var(--color-text-muted);">Structure pylône FA6 pour antennes
+                télécom</p>
+            </figcaption>
+          </figure>
+
+
+
+          <figure class="gallery-item reveal card card--glow" data-category="ENR" style="overflow:hidden;">
+            <div class="img-crop" style="aspect-ratio:4/3;">
+              <img src="assets/images/realisation-enr-2.jpg"
+                alt="Techniciens fixant des panneaux solaires sur toiture plate en hauteur" loading="lazy"
+                class="img-cover">
+            </div>
+            <figcaption style="padding:1.25rem;">
+              <span style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--color-accent);">ENR</span>
+              <h3
+                style="font-size:var(--text-base);font-weight:600;color:var(--color-text);margin-top:0.25rem;margin-bottom:0.25rem;">
+                Pose toiture plate en hauteur</h3>
+              <p style="font-size:var(--text-sm);color:var(--color-text-muted);">Fixation de modules photovoltaïques —
+                toiture bâtiment R+3</p>
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item reveal card card--glow" data-category="ENR" style="overflow:hidden;">
+            <div class="img-crop" style="aspect-ratio:4/3;">
+              <img src="assets/images/realisation-enr-3.jpg"
+                alt="Équipe fixant des panneaux solaires en champ avec pylône télécom" loading="lazy" class="img-cover">
+            </div>
+            <figcaption style="padding:1.25rem;">
+              <span style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--color-accent);">ENR</span>
+              <h3
+                style="font-size:var(--text-base);font-weight:600;color:var(--color-text);margin-top:0.25rem;margin-bottom:0.25rem;">
+                Champ solaire site télécom</h3>
+              <p style="font-size:var(--text-sm);color:var(--color-text-muted);">Installation de panneaux solaires —
+                alimentation site télécom</p>
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item reveal card card--glow" data-category="ENR" style="overflow:hidden;">
+            <div class="img-crop" style="aspect-ratio:4/3;">
+              <img src="assets/images/mast-fa8.jpg" alt="Mât télécom FA8 avec équipement installé" loading="lazy"
+                class="img-cover">
+            </div>
+            <figcaption style="padding:1.25rem;">
+              <span style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--color-accent);">ENR</span>
+              <h3
+                style="font-size:var(--text-base);font-weight:600;color:var(--color-text);margin-top:0.25rem;margin-bottom:0.25rem;">
+                Compteurs et disjoncteurs</h3>
+              <p style="font-size:var(--text-sm);color:var(--color-text-muted);">Installation et raccordement de
+                compteurs électriques et disjoncteurs</p>
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item reveal card card--glow" data-category="GC" style="overflow:hidden;">
+            <div class="img-crop" style="aspect-ratio:4/3;">
+              <img src="assets/images/realisation-gen-1.jpg"
+                alt="Chef de chantier supervisant la construction d'un immeuble" loading="lazy" class="img-cover">
+            </div>
+            <figcaption style="padding:1.25rem;">
+              <span style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--color-accent);">GC</span>
+              <h3
+                style="font-size:var(--text-base);font-weight:600;color:var(--color-text);margin-top:0.25rem;margin-bottom:0.25rem;">
+                Supervision de chantier</h3>
+              <p style="font-size:var(--text-sm);color:var(--color-text-muted);">Conduite de travaux — construction de
+                bâtiments R+4</p>
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item reveal card card--glow" data-category="GC" style="overflow:hidden;">
+            <div class="img-crop" style="aspect-ratio:4/3;">
+              <img src="assets/images/realisation-gen-2.jpg"
+                alt="Équipe de maçons posant des parpaings sur un chantier de construction" loading="lazy"
+                class="img-cover">
+            </div>
+            <figcaption style="padding:1.25rem;">
+              <span style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--color-accent);">GC</span>
+              <h3
+                style="font-size:var(--text-base);font-weight:600;color:var(--color-text);margin-top:0.25rem;margin-bottom:0.25rem;">
+                Maçonnerie &amp; élévation de murs</h3>
+              <p style="font-size:var(--text-sm);color:var(--color-text-muted);">Construction en parpaings — clôture et
+                local technique</p>
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item reveal card card--glow" data-category="GC" style="overflow:hidden;">
+            <div class="img-crop" style="aspect-ratio:4/3;">
+              <img src="assets/images/realisation-gen-3.png"
+                alt="Coffrage béton armé sur chantier de construction de bâtiment" loading="lazy" class="img-cover">
+            </div>
+            <figcaption style="padding:1.25rem;">
+              <span style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--color-accent);">GC</span>
+              <h3
+                style="font-size:var(--text-base);font-weight:600;color:var(--color-text);margin-top:0.25rem;margin-bottom:0.25rem;">
+                Coffrage béton armé</h3>
+              <p style="font-size:var(--text-sm);color:var(--color-text-muted);">Mise en place de coffrages et
+                ferraillage — structure R+6</p>
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item reveal card card--glow" data-category="GC" style="overflow:hidden;">
+            <div class="img-crop" style="aspect-ratio:4/3;">
+              <img src="assets/images/service-gen-genie-civil.jpg" alt="Chantier génie civil — fondations pylône ETIGE"
+                loading="lazy" class="img-cover">
+            </div>
+            <figcaption style="padding:1.25rem;">
+              <span style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--color-accent);">GC</span>
+              <h3
+                style="font-size:var(--text-base);font-weight:600;color:var(--color-text);margin-top:0.25rem;margin-bottom:0.25rem;">
+                Travaux de Génie Civil</h3>
+              <p style="font-size:var(--text-sm);color:var(--color-text-muted);">Construction et aménagement
+                d'infrastructures — terrassement et gros œuvre</p>
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item reveal card card--glow" data-category="ZON" style="overflow:hidden;">
+            <div class="img-crop" style="aspect-ratio:4/3;">
+              <img src="assets/images/service-zon-desenclavement.jpg"
+                alt="Infrastructure de connectivité en zone rurale" loading="lazy" class="img-cover">
+            </div>
+            <figcaption style="padding:1.25rem;">
+              <span style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--color-accent);">ZON
+              </span>
+              <h3
+                style="font-size:var(--text-base);font-weight:600;color:var(--color-text);margin-top:0.25rem;margin-bottom:0.25rem;">
+                Connectivité Rurale</h3>
+              <p style="font-size:var(--text-sm);color:var(--color-text-muted);">Déploiement de liaisons de transmission
+                pour désenclavement numérique</p>
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item reveal card card--glow" data-category="ZON" style="overflow:hidden;">
+            <div class="img-crop" style="aspect-ratio:4/3;">
+              <img src="assets/images/service-zon-desenclavement.png"
+                alt="Installation réseau pour l'inclusion numérique" loading="lazy" class="img-cover">
+            </div>
+            <figcaption style="padding:1.25rem;">
+              <span style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--color-accent);">ZON
+              </span>
+              <h3
+                style="font-size:var(--text-base);font-weight:600;color:var(--color-text);margin-top:0.25rem;margin-bottom:0.25rem;">
+                Inclusion Numérique</h3>
+              <p style="font-size:var(--text-sm);color:var(--color-text-muted);">Mise en place de réseaux haut débit
+                pour les communautés éloignées</p>
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item reveal card card--glow" data-category="ZON" style="overflow:hidden;">
+            <div class="img-crop" style="aspect-ratio:4/3;">
+              <img src="assets/images/ChatGPT Image 16 août 2026, 18_34_25.png"
+                alt="Connectivité rurale — antenne relais zone isolée" loading="lazy" class="img-cover">
+            </div>
+            <figcaption style="padding:1.25rem;">
+              <span style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--color-accent);">ZON
+              </span>
+              <h3
+                style="font-size:var(--text-base);font-weight:600;color:var(--color-text);margin-top:0.25rem;margin-bottom:0.25rem;">
+                Connectivité Rurale</h3>
+              <p style="font-size:var(--text-sm);color:var(--color-text-muted);">Installation d'antenne relais pour
+                zones isolées et désenclavement numérique</p>
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item reveal card card--glow" data-category="FO" style="overflow:hidden;">
+            <div class="img-crop" style="aspect-ratio:4/3;">
+              <img src="assets/images/realisation-fib-1.jpg"
+                alt="Boîtier de raccordement fibre optique souterrain en tranchée" loading="lazy" class="img-cover">
+            </div>
+            <figcaption style="padding:1.25rem;">
+              <span style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--color-accent);">FO</span>
+              <h3
+                style="font-size:var(--text-base);font-weight:600;color:var(--color-text);margin-top:0.25rem;margin-bottom:0.25rem;">
+                Raccordement souterrain</h3>
+              <p style="font-size:var(--text-sm);color:var(--color-text-muted);">Installation de boîtier fibre optique
+                en tranchée — jonction de câbles</p>
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item reveal card card--glow" data-category="FO" style="overflow:hidden;">
+            <div class="img-crop" style="aspect-ratio:4/3;">
+              <img src="assets/images/realisation-fib-2.jpg"
+                alt="Épissure et lovage de fibres optiques dans un tiroir de brassage" loading="lazy" class="img-cover">
+            </div>
+            <figcaption style="padding:1.25rem;">
+              <span style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--color-accent);">FO</span>
+              <h3
+                style="font-size:var(--text-base);font-weight:600;color:var(--color-text);margin-top:0.25rem;margin-bottom:0.25rem;">
+                Épissure &amp; brassage fibre</h3>
+              <p style="font-size:var(--text-sm);color:var(--color-text-muted);">Lovage et soudure de fibres optiques —
+                tiroir de brassage</p>
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item reveal card card--glow" data-category="FO" style="overflow:hidden;">
+            <div class="img-crop" style="aspect-ratio:4/3;">
+              <img src="assets/images/realisation-fib-3.jpg"
+                alt="Tirage de câbles fibre optique et conduits en tranchée ouverte" loading="lazy" class="img-cover">
+            </div>
+            <figcaption style="padding:1.25rem;">
+              <span style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--color-accent);">FO</span>
+              <h3
+                style="font-size:var(--text-base);font-weight:600;color:var(--color-text);margin-top:0.25rem;margin-bottom:0.25rem;">
+                Tirage câbles en tranchée</h3>
+              <p style="font-size:var(--text-sm);color:var(--color-text-muted);">Pose de conduits et tirage de câbles
+                fibre optique en fouille ouverte</p>
+            </figcaption>
+          </figure>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="js/components.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

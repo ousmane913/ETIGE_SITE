@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Découvrez ETIGE — Entreprise des Travaux Télécom, Informatique, Génie Civil et Énergie. Créée en 2022 à Abidjan, sous-traitant du Port Autonome d'Abidjan.">
+  <title>À propos — ETIGE | Infrastructures Télécom &amp; Énergie</title>
+
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  
+  <!-- Anti-flicker script : applique le thème avant le rendu de la page -->
+  <script>
+    (function(){
+      try {
+        var stored = localStorage.getItem("etige-theme");
+        if (stored === "light" || stored === "dark") {
+          document.documentElement.setAttribute("data-theme", stored);
+        } else if (window.matchMedia("(prefers-color-scheme: light)").matches) {
+          document.documentElement.setAttribute("data-theme", "light");
+        }
+      } catch (e) {}
+    })();
+  </script>
+
+  <style>
+    /* Styles spécifiques pour la page À Propos */
+    .about-hero-grid {
+      display: grid;
+      gap: 3rem;
+      align-items: center;
+    }
+    @media (min-width: 1024px) {
+      .about-hero-grid {
+        grid-template-columns: 1.2fr 0.8fr;
+      }
+    }
+
+    .about-hero-grid > * {
+      min-width: 0;
+      max-width: 100%;
+    }
+
+    .about-hero__title {
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+      hyphens: auto;
+      font-size: clamp(1.625rem, 7vw, var(--text-6xl));
+    }
+
+    .about-hero__title-line {
+      display: block;
+    }
+
+    .about-hero__visual {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      margin-top: 1.5rem;
+    }
+
+    .about-hero__diagram {
+      width: 100%;
+      max-width: min(360px, 100%);
+      height: auto;
+      aspect-ratio: 1;
+      display: block;
+      border: 1px solid var(--color-border-md);
+      border-radius: var(--radius-lg);
+      background: var(--color-bg-raised);
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+    }
+
+    :root[data-theme="light"] .about-hero__diagram {
+      background: var(--color-bg-overlay);
+      box-shadow: 0 4px 20px rgba(15, 17, 19, 0.08);
+    }
+
+    /* Hero : affichage immédiat sur mobile (pas d'attente du scroll reveal) */
+    .page-hero .reveal {
+      opacity: 1;
+      transform: none;
+    }
+
+    @media (min-width: 1024px) {
+      .about-hero__visual {
+        margin-top: 0;
+      }
+
+      .page-hero .reveal {
+        opacity: 0;
+        transform: translateY(1.5rem);
+      }
+
+      .page-hero .reveal.visible {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    .about-hero__lead {
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+    }
+
+    @media (min-width: 640px) {
+      .about-hero__lead {
+        font-size: var(--text-lg);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .about-hero__title {
+        font-size: clamp(1.375rem, 6.5vw, 1.875rem);
+      }
+    }
+
+    /* Animation de pulsation */
+    @keyframes tech-pulse {
+      0%, 100% { transform: scale(1); opacity: 0.25; }
+      50% { transform: scale(1.8); opacity: 0.8; }
+    }
+    .pulse-glow {
+      animation: tech-pulse 3s infinite ease-in-out;
+      transform-origin: center;
+    }
+
+    /* Animation de flux de signal */
+    @keyframes signal-flow {
+      to { stroke-dashoffset: -40; }
+    }
+    .signal-line {
+      stroke-dasharray: 8 12;
+      animation: signal-flow 2s linear infinite;
+    }
+
+    /* Style du radar d'implantation */
+    @keyframes radar-sweep {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    .radar-beam {
+      transform-origin: 150px 150px;
+      animation: radar-sweep 6s linear infinite;
+    }
+
+    /* Star topology schema */
+    .schema-container {
+      position: relative;
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
+      aspect-ratio: 1;
+    }
+
+    .schema-node {
+      position: absolute;
+      width: 80px;
+      height: 80px;
+      transform: translate(-50%, -50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: var(--color-bg-raised);
+      border: 1px solid var(--color-border-md);
+      transition: all var(--transition-base);
+      cursor: pointer;
+      z-index: 2;
+    }
+
+    .schema-node:hover {
+      border-color: var(--color-accent);
+      box-shadow: 0 0 15px var(--glow-accent-sm);
+      transform: translate(-50%, -50%) scale(1.08);
+    }
+
+    .schema-node__code {
+      font-family: var(--font-mono);
+      font-size: var(--text-xs);
+      font-weight: 600;
+      color: var(--color-accent);
+    }
+
+    .schema-node__label {
+      font-size: 10px;
+      color: var(--color-text-muted);
+      text-align: center;
+      margin-top: 2px;
+      line-height: 1.1;
+      padding: 0 4px;
+    }
+
+    .schema-node--center {
+      width: 110px;
+      height: 110px;
+      border-color: var(--color-accent);
+      box-shadow: 0 0 20px var(--glow-accent);
+      cursor: default;
+    }
+    .schema-node--center:hover {
+      transform: translate(-50%, -50%) scale(1);
+    }
+
+    .schema-svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+
+    /* Positionnement des nœuds */
+    .node-center { top: 50%; left: 50%; }
+    .node-net { top: 15%; left: 50%; }
+    .node-com { top: 28%; left: 82%; }
+    .node-cam { top: 62%; left: 82%; }
+    .node-fo { top: 85%; left: 50%; }
+    .node-zon { top: 62%; left: 18%; }
+    .node-gc { top: 28%; left: 18%; }
+    .node-enr { top: 50%; left: 50%; display: none; } /* On le place intelligemment */
+
+    /* Grid layout fallback pour mobile */
+    .schema-fallback {
+      display: none;
+      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+      width: 100%;
+    }
+
+    @media (max-width: 640px) {
+      .schema-container { display: none; }
+      .schema-fallback { display: grid; }
+    }
+  </style>
+</head>
+<body>
+
+  <main id="main-content">
+
+    <!-- ── PAGE HERO ─────────────────────────── -->
+    <section class="page-hero bg-hero bg-grid" aria-labelledby="about-title">
+      <div class="container">
+        <div class="about-hero-grid">
+          
+          <div class="reveal">
+            <p class="label" aria-hidden="true" style="font-family: var(--font-mono); color: var(--color-accent);"> PROFIL ENTREPRISE</p>
+            <h1 id="about-title" class="heading-1 about-hero__title" style="margin-top: 1rem; margin-bottom: 1.5rem;">
+              <span class="about-hero__title-line">Nous construisons</span>
+              <span class="about-hero__title-line">les infrastructures</span>
+              <span class="about-hero__title-line">qui connectent.</span>
+            </h1>
+            <p class="about-hero__lead" style="font-size: var(--text-base); color: var(--color-text-muted); line-height: 1.7;">
+              ETIGE accompagne les projets liés aux télécommunications, aux réseaux informatiques, aux infrastructures et à l'énergie en Côte d'Ivoire.
+            </p>
+          </div>
+
+          <!-- Schéma technique interactif / Blueprint Hero -->
+          <div class="about-hero__visual" aria-hidden="true">
+            <svg class="about-hero__diagram" viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Faint grid background -->
+              <defs>
+                <pattern id="hero-grid" width="20" height="20" patternUnits="userSpaceOnUse">
+                  <path d="M 20 0 L 0 0 0 20" fill="none" stroke="var(--color-border)" stroke-width="0.5"/>
+                </pattern>
+              </defs>
+              <rect width="100%" height="100%" fill="url(#hero-grid)" />
+
+              <!-- Technical coordinates -->
+              <text x="15" y="25" fill="var(--color-text-muted)" font-family="var(--font-mono)" font-size="8" opacity="0.6">SYS_LOC // 5.3164 N / 4.0189 W</text>
+              <text x="15" y="305" fill="var(--color-text-muted)" font-family="var(--font-mono)" font-size="8" opacity="0.6">EST_2022 // ABIDJAN_CI</text>
+
+              <!-- Central Node (ETIGE) -->
+              <circle cx="160" cy="160" r="6" fill="var(--color-accent)"/>
+              <circle cx="160" cy="160" r="16" stroke="var(--color-accent)" stroke-width="1.5" stroke-dasharray="2 4"/>
+              
+              <!-- Core Nodes -->
+              <!-- Telecom Node (Top) -->
+              <line x1="160" y1="160" x2="160" y2="70" stroke="var(--color-border-md)" stroke-width="1"/>
+              <line x1="160" y1="160" x2="160" y2="70" stroke="var(--color-accent)" stroke-width="1" class="signal-line" />
+              <circle cx="160" cy="70" r="4" fill="var(--color-text)"/>
+              <circle cx="160" cy="70" r="9" stroke="var(--color-accent)" stroke-width="1" class="pulse-glow"/>
+              <text x="170" y="73" fill="var(--color-text)" font-family="var(--font-mono)" font-size="8" font-weight="600">CORE_TELECOM</text>
+
+              <!-- Network Node (Right-Down) -->
+              <line x1="160" y1="160" x2="250" y2="210" stroke="var(--color-border-md)" stroke-width="1"/>
+              <circle cx="250" cy="210" r="4" fill="var(--color-text)"/>
+              <text x="200" y="225" fill="var(--color-text-muted)" font-family="var(--font-mono)" font-size="8">IT_NET_SYS</text>
+
+              <!-- Energy Node (Left-Down) -->
+              <line x1="160" y1="160" x2="70" y2="210" stroke="var(--color-border-md)" stroke-width="1"/>
+              <circle cx="70" cy="210" r="4" fill="var(--color-text)"/>
+              <text x="45" y="225" fill="var(--color-text-muted)" font-family="var(--font-mono)" font-size="8">ENR_SOLAR</text>
+
+              <!-- Perimeter boundary -->
+              <rect x="30" y="40" width="260" height="240" fill="none" stroke="var(--color-border)" stroke-width="1" stroke-dasharray="10 30"/>
+              <circle cx="30" cy="40" r="2" fill="var(--color-accent)"/>
+              <circle cx="290" cy="40" r="2" fill="var(--color-border-md)"/>
+              <circle cx="30" cy="280" r="2" fill="var(--color-border-md)"/>
+              <circle cx="290" cy="280" r="2" fill="var(--color-accent)"/>
+            </svg>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── SECTION QUI SOMMES-NOUS ? ──────────── -->
+    <section class="section bg-raised" aria-label="Présentation générale">
+      <div class="container">
+        
+        <style>
+          .identity-grid {
+            display: grid;
+            gap: 4rem;
+            align-items: center;
+          }
+          @media (min-width: 1024px) {
+            .identity-grid {
+              grid-template-columns: 1fr 1fr;
+            }
+          }
+        </style>
+
+        <div class="identity-grid">
+          
+          <div class="reveal">
+            <p class="label" aria-hidden="true" style="font-family: var(--font-mono); color: var(--color-accent);">01 — IDENTITÉ</p>
+            <h2 class="heading-2" style="margin-top: 1rem; margin-bottom: 2rem;">Une entreprise tournée vers les infrastructures de demain.</h2>
+            <div style="font-size: var(--text-base); color: var(--color-text-muted); line-height: 1.85; display: grid; gap: 1.5rem;">
+              <p>
+                <strong>ETIGE</strong> — Entreprise des Travaux Télécom, Informatique, Génie Civil et Énergie — est une structure créée en <strong>2022</strong> et implantée à Treichville, Abidjan (Côte d'Ivoire).
+              </p>
+              <p>
+                Nous intervenons dans des pôles d'activités techniques hautement complémentaires afin de répondre aux exigences de déploiement et de maintenance de nos partenaires. De la conception de pylônes au raccordement fibre, en passant par le génie civil d'infrastructure et l'alimentation solaire, nous apportons une réponse globale et rigoureuse.
+              </p>
+              <p style="border-left: 2px solid var(--color-accent); padding-left: 1.25rem; color: var(--color-text);">
+                Notre priorité stratégique et opérationnelle repose sur le développement des expertises <strong>Télécom &amp; Informatique</strong>, piliers indispensables à la transformation numérique des entreprises et des territoires.
+              </p>
+            </div>
+          </div>
+
+          <!-- Composition Visuelle Technique (Blueprint/Schéma structure) -->
+          <div class="reveal reveal--delay-1" style="display: flex; justify-content: center; width: 100%;">
+            <div style="width: 100%; max-width: 450px; border: 1px solid var(--color-border-md); border-radius: var(--radius-xl); background: rgba(10, 12, 14, 0.6); overflow: hidden; aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center;">
+              <img src="assets/images/about-pylone-blueprint.png" alt="Schéma technique détaillé du pylône de télécommunication" class="img-cover" loading="lazy">
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── BLOC ADN ───────────────────────────── -->
+    <section class="section bg-base" aria-label="Notre ADN">
+      <div class="container">
+        
+        <div style="margin-bottom: 4rem; text-align: center;" class="reveal">
+          <p class="label" aria-hidden="true" style="font-family: var(--font-mono); color: var(--color-accent);"> FONDATIONS</p>
+          <h2 class="heading-2" style="margin-top: 1rem;">Notre ADN</h2>
+        </div>
+
+        <style>
+          .adn-grid {
+            display: grid;
+            gap: 1.5rem;
+          }
+          @media (min-width: 640px) {
+            .adn-grid {
+              grid-template-columns: 1fr 1fr;
+            }
+          }
+          @media (min-width: 1024px) {
+            .adn-grid {
+              grid-template-columns: repeat(4, 1fr);
+            }
+          }
+          .adn-card {
+            padding: 2.5rem 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            background: var(--color-bg-raised);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-xl);
+            transition: all var(--transition-base);
+          }
+          .adn-card:hover {
+            border-color: var(--color-accent);
+            transform: translateY(-4px);
+          }
+          .adn-card__num {
+            font-family: var(--font-mono);
+            font-size: var(--text-base);
+            font-weight: 600;
+            color: var(--color-accent);
+          }
+        </style>
+
+        <div class="adn-grid">
+          
+          <div class="adn-card reveal">
+            <span class="adn-card__num">01</span>
+            <h3 class="heading-4" style="margin-top: 0.5rem; margin-bottom: 0.5rem;">Précision</h3>
+            <p style="font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.6; margin: 0;">
+              Chaque infrastructure repose sur la rigueur et la précision technique.
+            </p>
+          </div>
+
+          <div class="adn-card reveal reveal--delay-1">
+            <span class="adn-card__num">02</span>
+            <h3 class="heading-4" style="margin-top: 0.5rem; margin-bottom: 0.5rem;">Connectivité</h3>
+            <p style="font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.6; margin: 0;">
+              Relier les technologies, les entreprises et les territoires.
+            </p>
+          </div>
+
+          <div class="adn-card reveal reveal--delay-2">
+            <span class="adn-card__num">03</span>
+            <h3 class="heading-4" style="margin-top: 0.5rem; margin-bottom: 0.5rem;">Fiabilité</h3>
+            <p style="font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.6; margin: 0;">
+              Construire des solutions pensées pour répondre aux besoins réels des projets.
+            </p>
+          </div>
+
+          <div class="adn-card reveal reveal--delay-3">
+            <span class="adn-card__num">04</span>
+            <h3 class="heading-4" style="margin-top: 0.5rem; margin-bottom: 0.5rem;">Exécution</h3>
+            <p style="font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.6; margin: 0;">
+              Transformer les besoins techniques en infrastructures concrètes.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── SECTION NOS DOMAINES ───────────────── -->
+    <section class="section bg-raised" aria-label="Domaines d'intervention">
+      <div class="container">
+        
+        <div style="margin-bottom: 4rem; text-align: center;" class="reveal">
+          <p class="label" aria-hidden="true" style="font-family: var(--font-mono); color: var(--color-accent);">// SYSTÈMES &amp; COMPÉTENCES</p>
+          <h2 class="heading-2" style="margin-top: 1rem;">Une expertise multidisciplinaire</h2>
+          <p style="font-size: var(--text-base); color: var(--color-text-muted); max-width: 32rem; margin: 1rem auto 0; line-height: 1.6;">
+            Interconnexion de nos pôles techniques au service de vos infrastructures.
+          </p>
+        </div>
+
+        <!-- Schéma d'infrastructure interactif / Topologie réseau -->
+        <div class="reveal" style="display: flex; justify-content: center; width: 100%;">
+          
+          <div class="schema-container">
+            <svg class="schema-svg" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Network lines linking outer nodes to center -->
+              <!-- NET -->
+              <line x1="250" y1="250" x2="250" y2="75" stroke="var(--color-border-md)" stroke-width="1.5"/>
+              <line x1="250" y1="250" x2="250" y2="75" stroke="var(--color-accent)" stroke-width="1.5" class="signal-line"/>
+              <!-- COM -->
+              <line x1="250" y1="250" x2="410" y2="140" stroke="var(--color-border-md)" stroke-width="1.5"/>
+              <!-- CAM -->
+              <line x1="250" y1="250" x2="410" y2="310" stroke="var(--color-border-md)" stroke-width="1.5"/>
+              <!-- FO -->
+              <line x1="250" y1="250" x2="250" y2="425" stroke="var(--color-border-md)" stroke-width="1.5"/>
+              <line x1="250" y1="250" x2="250" y2="425" stroke="var(--color-accent)" stroke-width="1.5" class="signal-line"/>
+              <!-- ZON -->
+              <line x1="250" y1="250" x2="90" y2="310" stroke="var(--color-border-md)" stroke-width="1.5"/>
+              <!-- GC -->
+              <line x1="250" y1="250" x2="90" y2="140" stroke="var(--color-border-md)" stroke-width="1.5"/>
+              
+              <!-- Perimeter dashed connection -->
+              <path d="M 250 75 Q 350 90 410 140 Q 450 220 410 310 Q 350 390 250 425 Q 150 390 90 310 Q 50 220 90 140 Q 150 90 250 75" fill="none" stroke="var(--color-border)" stroke-width="1" stroke-dasharray="4 6"/>
+            </svg>
+
+            <!-- Nœud Central -->
+            <div class="schema-node schema-node--center node-center">
+              <img src="assets/images/logo.png" alt="Logo ETIGE" style="width: 40px; height: auto; margin-bottom: 4px;">
+              <span class="schema-node__code" style="font-size: var(--text-sm);">ETIGE</span>
+              <span class="schema-node__label" style="font-size: 8px;">INTEGRATED NOC</span>
+            </div>
+
+            <!-- NET -->
+            <a href="services.html#NET" class="schema-node node-net" aria-label="Pôle NET — Réseaux informatiques">
+              <span class="schema-node__code">NET</span>
+              <span class="schema-node__label">Réseaux</span>
+            </a>
+
+            <!-- COM -->
+            <a href="services.html#COM" class="schema-node node-com" aria-label="Pôle COM — Création de pylônes télécom">
+              <span class="schema-node__code">COM</span>
+              <span class="schema-node__label">Pylônes</span>
+            </a>
+
+            <!-- CAM -->
+            <a href="services.html#CAM" class="schema-node node-cam" aria-label="Pôle CAM — Caméras de sécurité">
+              <span class="schema-node__code">CAM</span>
+              <span class="schema-node__label">CCTV / IP</span>
+            </a>
+
+            <!-- FO -->
+            <a href="services.html#FO" class="schema-node node-fo" aria-label="Pôle FO — Déploiement de fibre optique">
+              <span class="schema-node__code">FO</span>
+              <span class="schema-node__label">Fibre</span>
+            </a>
+
+            <!-- ZON -->
+            <a href="services.html#ZON" class="schema-node node-zon" aria-label="Pôle ZON — Désenclavement numérique">
+              <span class="schema-node__code">ZON</span>
+              <span class="schema-node__label">Désenclav.</span>
+            </a>
+
+            <!-- GC -->
+            <a href="services.html#GC" class="schema-node node-gc" aria-label="Pôle GC — Génie civil">
+              <span class="schema-node__code">GC</span>
+              <span class="schema-node__label">Génie Civil</span>
+            </a>
+          </div>
+
+          <!-- Version mobile (liste compacte de cartes) -->
+          <div class="schema-fallback">
+            <a href="services.html#NET" class="card" style="padding: 1.25rem 1rem; text-align: center; text-decoration: none;">
+              <span class="schema-node__code">NET</span>
+              <div style="font-size: var(--text-xs); color: var(--color-text-muted); margin-top: 0.25rem;">Réseaux informatiques</div>
+            </a>
+            <a href="services.html#COM" class="card" style="padding: 1.25rem 1rem; text-align: center; text-decoration: none;">
+              <span class="schema-node__code">COM</span>
+              <div style="font-size: var(--text-xs); color: var(--color-text-muted); margin-top: 0.25rem;">Pylônes télécom</div>
+            </a>
+            <a href="services.html#CAM" class="card" style="padding: 1.25rem 1rem; text-align: center; text-decoration: none;">
+              <span class="schema-node__code">CAM</span>
+              <div style="font-size: var(--text-xs); color: var(--color-text-muted); margin-top: 0.25rem;">Vidéosurveillance IP</div>
+            </a>
+            <a href="services.html#FO" class="card" style="padding: 1.25rem 1rem; text-align: center; text-decoration: none;">
+              <span class="schema-node__code">FO</span>
+              <div style="font-size: var(--text-xs); color: var(--color-text-muted); margin-top: 0.25rem;">Fibre optique</div>
+            </a>
+            <a href="services.html#ZON" class="card" style="padding: 1.25rem 1rem; text-align: center; text-decoration: none;">
+              <span class="schema-node__code">ZON</span>
+              <div style="font-size: var(--text-xs); color: var(--color-text-muted); margin-top: 0.25rem;">Désenclavement</div>
+            </a>
+            <a href="services.html#GC" class="card" style="padding: 1.25rem 1rem; text-align: center; text-decoration: none;">
+              <span class="schema-node__code">GC</span>
+              <div style="font-size: var(--text-xs); color: var(--color-text-muted); margin-top: 0.25rem;">Génie civil</div>
+            </a>
+            <a href="services.html#ENR" class="card" style="padding: 1.25rem 1rem; text-align: center; text-decoration: none; grid-column: 1 / -1;">
+              <span class="schema-node__code" style="color: var(--color-text-muted);">ENR</span>
+              <div style="font-size: var(--text-xs); color: var(--color-text-muted); margin-top: 0.25rem;">Énergie &amp; Solaire MPPT</div>
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── SECTION TÉLÉCOM & INFORMATIQUE ──────── -->
+    <section class="section bg-base" aria-label="Cœur de métier">
+      <div class="container">
+        
+        <style>
+          .telecom-expert-block {
+            background: linear-gradient(135deg, #1a1d21 0%, #0f1113 100%);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: var(--radius-xl);
+            padding: 2rem 1.5rem;
+            display: grid;
+            gap: 2.5rem;
+            align-items: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+
+            /* Assure la visibilité du texte en forçant les tokens sombres dans ce bloc à fond sombre */
+            color: #f4f4f5 !important;
+            --color-text: #f4f4f5;
+            --color-text-muted: #9ca3af;
+            --color-border: rgba(255, 255, 255, 0.08);
+            --color-border-md: rgba(255, 255, 255, 0.12);
+            --color-bg-raised: #1a1d21;
+          }
+          .telecom-expert-block h2 {
+            color: #f4f4f5 !important;
+          }
+          @media (min-width: 1024px) {
+            .telecom-expert-block {
+              grid-template-columns: 1fr 1fr;
+              padding: 4rem;
+              gap: 3rem;
+            }
+          }
+        </style>
+
+        <div class="telecom-expert-block reveal">
+          
+          <div>
+            <p class="label" aria-hidden="true" style="font-family: var(--font-mono); color: var(--color-accent);">CORE EXPERTISE</p>
+            <h2 class="heading-2" style="margin-top: 1rem; margin-bottom: 2rem; text-transform: uppercase;">Télécom &amp; Informatique</h2>
+            <p style="font-size: var(--text-base); color: var(--color-text-muted); line-height: 1.8; margin-bottom: 1.5rem;">
+              ETIGE positionne l'architecture réseau et les infrastructures télécom au cœur de son savoir-faire. Nous déployons des backbones de transport, assurons le raccordement en fibre optique et configurons des solutions de connectivité avancées.
+            </p>
+            
+            <ul style="list-style: none; padding: 0; display: grid; gap: 0.75rem; font-family: var(--font-mono); font-size: var(--text-sm); color: var(--color-text);">
+              <li style="display: flex; align-items: center; gap: 0.75rem;">
+                <span style="display: inline-block; width: 6px; height: 6px; background: var(--color-accent); border-radius: 50%;"></span>
+                Réseaux d'entreprises &amp; baies de brassage
+              </li>
+              <li style="display: flex; align-items: center; gap: 0.75rem;">
+                <span style="display: inline-block; width: 6px; height: 6px; background: var(--color-accent); border-radius: 50%;"></span>
+                Infrastructures de télécommunication &amp; pylônes
+              </li>
+              <li style="display: flex; align-items: center; gap: 0.75rem;">
+                <span style="display: inline-block; width: 6px; height: 6px; background: var(--color-accent); border-radius: 50%;"></span>
+                Liaisons fibre optique et raccordements
+              </li>
+              <li style="display: flex; align-items: center; gap: 0.75rem;">
+                <span style="display: inline-block; width: 6px; height: 6px; background: var(--color-accent); border-radius: 50%;"></span>
+                Désenclavement numérique (FH &amp; FH satellite)
+              </li>
+            </ul>
+          </div>
+
+          <!-- Flow Diagram (réseau -> fibre -> pylône -> infrastructure -> utilisateur) -->
+          <div style="display: flex; justify-content: center; align-items: center;">
+            <svg viewBox="0 0 350 240" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: auto; aspect-ratio: 350/240; border: 1px solid var(--color-border); border-radius: var(--radius-lg); background: rgba(10, 12, 14, 0.4); padding: 1rem; overflow: visible;">
+              
+              <!-- Flow Lines -->
+              <!-- Line 1: Reseau -> Fibre -->
+              <path d="M 60 70 L 175 70" stroke="var(--color-border-md)" stroke-width="1.5"/>
+              <path d="M 60 70 L 175 70" stroke="var(--color-accent)" stroke-width="1.5" class="signal-line"/>
+              
+              <!-- Line 2: Fibre -> Pylone -->
+              <path d="M 175 70 L 175 160" stroke="var(--color-border-md)" stroke-width="1.5"/>
+              <path d="M 175 70 L 175 160" stroke="var(--color-accent)" stroke-width="1.5" class="signal-line"/>
+
+              <!-- Line 3: Pylone -> User -->
+              <path d="M 175 160 L 290 160" stroke="var(--color-border-md)" stroke-width="1.5"/>
+              
+              <!-- Node 1: Réseau -->
+              <circle cx="60" cy="70" r="15" fill="var(--color-bg-raised)" stroke="var(--color-border-md)"/>
+              <text x="60" y="73" fill="var(--color-text)" font-family="var(--font-mono)" font-size="8" text-anchor="middle" font-weight="600">NET</text>
+              <text x="60" y="98" fill="var(--color-text-muted)" font-family="var(--font-sans)" font-size="8" text-anchor="middle">Réseau</text>
+
+              <!-- Node 2: Fibre -->
+              <circle cx="175" cy="70" r="15" fill="var(--color-bg-raised)" stroke="var(--color-accent)"/>
+              <text x="175" y="73" fill="var(--color-accent)" font-family="var(--font-mono)" font-size="8" text-anchor="middle" font-weight="600">FO</text>
+              <text x="175" y="48" fill="var(--color-text-muted)" font-family="var(--font-sans)" font-size="8" text-anchor="middle">Fibre</text>
+
+              <!-- Node 3: Pylone -->
+              <circle cx="175" cy="160" r="15" fill="var(--color-bg-raised)" stroke="var(--color-border-md)"/>
+              <text x="175" y="163" fill="var(--color-text)" font-family="var(--font-mono)" font-size="8" text-anchor="middle" font-weight="600">COM</text>
+              <text x="175" y="188" fill="var(--color-text-muted)" font-family="var(--font-sans)" font-size="8" text-anchor="middle">Pylône</text>
+
+              <!-- Node 4: Utilisateur -->
+              <circle cx="290" cy="160" r="15" fill="var(--color-bg-raised)" stroke="var(--color-border-md)"/>
+              <text x="290" y="163" fill="var(--color-text)" font-family="var(--font-mono)" font-size="8" text-anchor="middle" font-weight="600">USR</text>
+              <text x="290" y="188" fill="var(--color-text-muted)" font-family="var(--font-sans)" font-size="8" text-anchor="middle">Client</text>
+
+              <!-- Flow direction markers -->
+              <polygon points="120,67 125,70 120,73" fill="var(--color-accent)"/>
+              <polygon points="172,120 175,125 178,120" fill="var(--color-accent)"/>
+              <polygon points="230,157 235,160 230,163" fill="var(--color-text-muted)"/>
+            </svg>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── SECTION HISTORIQUE / TIMELINE ──────── -->
+    <section class="section bg-raised" aria-label="Historique de l'entreprise">
+      <div class="container">
+        
+        <div style="margin-bottom: 4rem;" class="reveal">
+          <p class="label" aria-hidden="true" style="font-family: var(--font-mono); color: var(--color-accent);"> CHRONOLOGIE</p>
+          <h2 class="heading-2" style="margin-top: 1rem;">Notre parcours</h2>
+        </div>
+
+        <style>
+          .timeline-wrapper {
+            position: relative;
+            padding-left: 2rem;
+            border-left: 1px solid var(--color-border-md);
+            margin-left: 0.5rem;
+          }
+          .timeline-marker {
+            position: absolute;
+            left: -5px;
+            top: 6px;
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            background: var(--color-accent);
+            border: 2px solid var(--color-bg-base);
+          }
+          .timeline-year {
+            font-family: var(--font-mono);
+            font-size: var(--text-xl);
+            font-weight: 700;
+            color: var(--color-text);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+          }
+        </style>
+
+        <div class="timeline-wrapper reveal">
+          <div class="timeline-marker" aria-hidden="true"></div>
+          <div class="timeline-year">2022</div>
+          <h3 class="heading-4" style="margin-top: 0; margin-bottom: 0.75rem;">Création d'ETIGE</h3>
+          <p style="font-size: var(--text-sm); color: var(--color-text-muted); max-width: 32rem; line-height: 1.6; margin: 0;">
+            Implantation initiale au cœur d'Abidjan (Treichville) avec pour objectif d'offrir des solutions robustes de génie télécom, de câblage industriel et de distribution d'énergie.
+          </p>
+          
+          <!-- [ÉVÉNEMENT À AJOUTER] -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── SECTION CRÉDIBILITÉ ────────────────── -->
+    <section class="section bg-base" aria-label="Crédibilité &amp; Partenaires">
+      <div class="container">
+        
+        <style>
+          .cred-block {
+            border: 1px solid var(--color-border-md);
+            border-radius: var(--radius-xl);
+            background: var(--color-bg-raised);
+            padding: 3rem 2rem;
+            text-align: center;
+            max-width: 48rem;
+            margin: 0 auto;
+          }
+        </style>
+
+        <div class="cred-block reveal">
+          <p class="label" aria-hidden="true" style="font-family: var(--font-mono); color: var(--color-text-muted); font-size: var(--text-xs);">
+            PROJETS &amp; CRÉDIBILITÉ
+          </p>
+          <h2 class="heading-4" style="margin-top: 1rem; margin-bottom: 2.5rem; color: var(--color-text-muted); font-weight: 500;">
+            Une expertise qui s'inscrit dans des projets concrets
+          </h2>
+          
+          <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem;">
+            <span style="font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-accent); letter-spacing: 0.1em; font-weight: 600;">
+              SOUS-TRAITANT DU
+            </span>
+            <div style="font-size: var(--text-2xl); font-weight: 700; color: var(--color-text); text-transform: uppercase; letter-spacing: 0.05em; border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border); padding: 0.75rem 2rem;">
+              Port Autonome d'Abidjan
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── SECTION IMPLANTATION ───────────────── -->
+    <section class="section bg-raised" aria-label="Notre localisation">
+      <div class="container">
+        
+        <style>
+          .location-grid {
+            display: grid;
+            gap: 3rem;
+            align-items: center;
+          }
+          @media (min-width: 1024px) {
+            .location-grid {
+              grid-template-columns: 1fr 1fr;
+            }
+          }
+        </style>
+
+        <div class="location-grid">
+          
+          <div class="reveal">
+            <p class="label" aria-hidden="true" style="font-family: var(--font-mono); color: var(--color-accent);">// IMPLANTATION</p>
+            <h2 class="heading-2" style="margin-top: 1rem; margin-bottom: 1.5rem;">Abidjan — Côte d'Ivoire</h2>
+            <p style="font-size: var(--text-base); color: var(--color-text-muted); line-height: 1.7; margin-bottom: 1.5rem;">
+              Nos bureaux et nos équipes de support opérationnel sont implantés stratégiquement dans la zone portuaire et commerciale d'Abidjan afin d'intervenir au plus vite sur les chantiers.
+            </p>
+            
+            <div style="font-family: var(--font-mono); font-size: var(--text-sm); line-height: 1.6; color: var(--color-text);">
+              <div style="margin-bottom: 0.5rem;">
+                <span style="color: var(--color-accent);">ADRESSE //</span> Avenue 15, Rue 15 — Treichville
+              </div>
+              <div>
+                <span style="color: var(--color-accent);">COORD //</span> 5.3164° N, 4.0189° W
+              </div>
+            </div>
+          </div>
+
+          <!-- Radar / Visualisation de localisation -->
+          <div class="reveal reveal--delay-1" style="display: flex; justify-content: center;">
+            <svg viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 100%; max-width: 300px; height: auto; aspect-ratio: 1; border: 1px solid var(--color-border); border-radius: 50%; background: rgba(16, 18, 20, 0.4); overflow: visible;">
+              <!-- Radar background circles -->
+              <circle cx="150" cy="150" r="140" stroke="var(--color-border)" stroke-width="1"/>
+              <circle cx="150" cy="150" r="100" stroke="var(--color-border)" stroke-width="1" stroke-dasharray="2 4"/>
+              <circle cx="150" cy="150" r="60" stroke="var(--color-border)" stroke-width="1"/>
+              <circle cx="150" cy="150" r="20" stroke="var(--color-border)" stroke-width="1" stroke-dasharray="2 4"/>
+
+              <!-- Radar Axis -->
+              <line x1="10" y1="150" x2="290" y2="150" stroke="var(--color-border)" stroke-width="0.5"/>
+              <line x1="150" y1="10" x2="150" y2="290" stroke="var(--color-border)" stroke-width="0.5"/>
+
+              <!-- Target Point (Treichville) -->
+              <circle cx="150" cy="150" r="4" fill="var(--color-accent)"/>
+              <circle cx="150" cy="150" r="12" stroke="var(--color-accent)" stroke-width="1" class="pulse-glow"/>
+              
+              <!-- Radar Scanning Beam -->
+              <path d="M150 150 L270 90 A140 140 0 0 0 240 50 Z" fill="rgba(227, 30, 36, 0.08)" class="radar-beam" />
+              
+              <!-- Text markers -->
+              <text x="160" y="145" fill="var(--color-text)" font-family="var(--font-mono)" font-size="8" font-weight="600">ETIGE_HQ</text>
+            </svg>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── SECTION PHOTO CHANTIER / RÉALISATIONS ── -->
+    <section class="section bg-base" aria-label="Aperçu chantiers">
+      <div class="container">
+        
+        <div style="margin-bottom: 3rem;" class="reveal">
+          <p class="label" aria-hidden="true" style="font-family: var(--font-mono); color: var(--color-accent);">// RETOUR D'INTERVENTIONS</p>
+          <h2 class="heading-2" style="margin-top: 1rem;">Opérations terrain</h2>
+        </div>
+
+        <style>
+          .operations-grid {
+            display: grid;
+            gap: 1.5rem;
+          }
+          @media (min-width: 640px) {
+            .operations-grid {
+              grid-template-columns: 1fr 1fr;
+            }
+          }
+          @media (min-width: 1024px) {
+            .operations-grid {
+              grid-template-columns: repeat(3, 1fr);
+            }
+          }
+        </style>
+
+        <div class="operations-grid">
+          
+          <div class="reveal card card--glow" style="overflow: hidden;">
+            <div class="img-crop" style="aspect-ratio: 4/3;">
+              <img src="assets/images/realisation-fib-1.jpg" alt="Installation de boîtier fibre optique en tranchée" class="img-cover" loading="lazy">
+            </div>
+            <div style="padding: 1.25rem;">
+              <span style="font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-accent);">FO // EXTÉRIEUR</span>
+              <h4 class="heading-4" style="margin-top: 0.25rem; margin-bottom: 0;">Raccordements réseaux fibre</h4>
+            </div>
+          </div>
+
+          <div class="reveal reveal--delay-1 card card--glow" style="overflow: hidden;">
+            <div class="img-crop" style="aspect-ratio: 4/3;">
+              <img src="assets/images/realisation-gen-1.jpg" alt="Supervision de chantier génie civil" class="img-cover" loading="lazy">
+            </div>
+            <div style="padding: 1.25rem;">
+              <span style="font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-accent);">GC // CHANTIER</span>
+              <h4 class="heading-4" style="margin-top: 0.25rem; margin-bottom: 0;">Génie civil d'infrastructure</h4>
+            </div>
+          </div>
+
+          <div class="reveal reveal--delay-2 card card--glow" style="overflow: hidden;">
+            <div class="img-crop" style="aspect-ratio: 4/3;">
+              <img src="assets/images/realisation-enr-1.jpg" alt="Installation de panneaux solaires" class="img-cover" loading="lazy">
+            </div>
+            <div style="padding: 1.25rem;">
+              <span style="font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-accent);">ENR // PHOTOVOLTAÏQUE</span>
+              <h4 class="heading-4" style="margin-top: 0.25rem; margin-bottom: 0;">Systèmes de distribution d'énergie</h4>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── CTA FINAL ──────────────────────────── -->
+    <section class="section bg-raised" style="border-top: 1px solid var(--color-border);" aria-labelledby="cta-title">
+      <div class="container reveal" style="text-align: center; max-width: 44rem; margin: 0 auto;">
+        <h2 id="cta-title" class="heading-2" style="margin-bottom: 1.5rem; text-transform: uppercase;">
+          Votre projet commence par une connexion.
+        </h2>
+        <p style="font-size: var(--text-lg); color: var(--color-text-muted); line-height: 1.7; margin-bottom: 2.5rem;">
+          Échangeons autour de vos besoins en télécommunications, informatique, infrastructures ou énergie.
+        </p>
+        
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem;">
+          <a href="contact.html#devis" class="btn btn-primary">
+            Demander un devis &rarr;
+          </a>
+          <a href="contact.html" class="btn btn-outline">
+            Nous contacter
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="js/components.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

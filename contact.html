@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contactez ETIGE — Avenue 15, Rue 15, Treichville, Abidjan. Télécom, réseaux, énergie et génie civil.">
+  <title>Contact — ETIGE | Abidjan, Côte d'Ivoire</title>
+
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  
+  <!-- Anti-flicker script : applique le thème avant le rendu de la page -->
+  <script>
+    (function(){
+      try {
+        var stored = localStorage.getItem("etige-theme");
+        if (stored === "light" || stored === "dark") {
+          document.documentElement.setAttribute("data-theme", stored);
+        } else if (window.matchMedia("(prefers-color-scheme: light)").matches) {
+          document.documentElement.setAttribute("data-theme", "light");
+        }
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+
+  <main id="main-content">
+
+    <!-- ── PAGE HERO ─────────────────────────── -->
+    <section class="page-hero bg-hero bg-grid" aria-labelledby="contact-title">
+      <div class="container reveal">
+        <p class="label" aria-hidden="true">CONTACT</p>
+        <h1 id="contact-title" class="heading-1" style="margin-top:1rem;margin-bottom:1rem;">Échangeons sur votre projet</h1>
+        <p style="font-size:var(--text-lg);color:var(--color-text-muted);max-width:40rem;line-height:1.7;">
+          Coordonnées directes, localisation et formulaire de contact. Réponse sous 48 heures ouvrées.
+        </p>
+      </div>
+    </section>
+
+    <!-- ── FORMULAIRE & COORDONNÉES ──────────── -->
+    <section class="section bg-base" aria-label="Coordonnées et formulaire de contact">
+      <div class="container">
+
+        <style>@media (min-width:1024px) { .contact-main-grid { grid-template-columns:1fr 1.4fr; } }</style>
+        <div class="contact-main-grid" style="display:grid;gap:3rem 4rem;align-items:start;">
+
+          <!-- Coordonnées -->
+          <div class="reveal" style="display:flex;flex-direction:column;gap:1.5rem;">
+
+            <div class="card" style="padding:2rem;">
+              <h2 style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--color-accent);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:1.5rem;">
+                COORDONNÉES
+              </h2>
+              <dl style="display:flex;flex-direction:column;gap:1.5rem;">
+                <div class="contact-info-row">
+                  <dt class="contact-info-label">Adresse</dt>
+                  <dd class="contact-info-value">
+                    Avenue 15, Rue 15<br>Treichville, Abidjan<br>Côte d'Ivoire
+                  </dd>
+                </div>
+                <div class="contact-info-row">
+                  <dt class="contact-info-label">Téléphones</dt>
+                  <dd class="contact-info-value" style="display:flex;flex-direction:column;gap:0.25rem;">
+                    <a href="tel:+2252721538310">+225 27 21 53 83 10</a>
+                    <a href="tel:+2250505757810">+225 05 05 75 78 10</a>
+                    <a href="tel:+2250101078011">+225 01 01 07 80 11</a>
+                  </dd>
+                </div>
+                <div class="contact-info-row">
+                  <dt class="contact-info-label">Email</dt>
+                  <dd class="contact-info-value">
+                    <a href="mailto:info@etige-services.ci">info@etige-services.ci</a>
+                  </dd>
+                </div>
+                <div class="contact-info-row">
+                  <dt class="contact-info-label">Horaires</dt>
+                  <dd class="contact-info-value">
+                    Lundi – Vendredi, 8h – 17h
+                    <br><span style="color:var(--color-text-muted);font-size:var(--text-xs);">Fermé les jours fériés</span>
+                  </dd>
+                </div>
+              </dl>
+            </div>
+
+            <div class="card" style="padding:1.5rem;">
+              <h2 style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--color-accent);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.75rem;">
+                RÉFÉRENCE
+              </h2>
+              <p style="font-size:var(--text-sm);color:var(--color-text-muted);line-height:1.7;">
+                <span style="color:var(--color-accent);font-family:var(--font-mono);">PAA</span> — Sous-traitant agréé du Port Autonome d'Abidjan. Partenaire de confiance pour les projets d'infrastructure à enjeu institutionnel.
+              </p>
+            </div>
+
+          </div>
+
+          <!-- Formulaire -->
+          <div class="reveal reveal--delay-2" id="devis">
+            <div class="card" style="padding:2rem 2.5rem;">
+              <h2 class="heading-3" style="margin-bottom:0.5rem;">Formulaire de contact</h2>
+              <p style="font-size:var(--text-sm);color:var(--color-text-muted);margin-bottom:2rem;">
+                Envoyez-nous votre demande — le formulaire ouvre votre client mail avec un message pré-rempli.
+              </p>
+
+              <form id="contact-form" style="display:flex;flex-direction:column;gap:1.25rem;" novalidate>
+
+                <div class="form-group">
+                  <label for="name" class="form-label">Nom complet *</label>
+                  <input type="text" id="name" name="name" required class="form-input" placeholder="Votre nom">
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="email" class="form-label">Email *</label>
+                    <input type="email" id="email" name="email" required class="form-input" placeholder="vous@entreprise.ci">
+                  </div>
+                  <div class="form-group">
+                    <label for="phone" class="form-label">Téléphone</label>
+                    <input type="tel" id="phone" name="phone" class="form-input" placeholder="+225 XX XX XX XX XX">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="subject" class="form-label">Objet</label>
+                  <select id="subject" name="subject" class="form-input">
+                    <option value="Demande de devis">Demande de devis</option>
+                    <option value="Information services">Information services</option>
+                    <option value="Partenariat">Partenariat</option>
+                    <option value="Autre">Autre</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="message" class="form-label">Message *</label>
+                  <textarea id="message" name="message" required rows="5" class="form-input"
+                            style="resize:vertical;" placeholder="Décrivez votre projet ou votre demande…"></textarea>
+                </div>
+
+                <div>
+                  <button type="submit" class="btn btn-primary">Envoyer le message</button>
+                  <p id="form-notice"
+                     style="display:none;margin-top:1rem;font-size:var(--text-sm);color:var(--color-text-muted);font-family:var(--font-mono);"></p>
+                </div>
+
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CARTE ──────────────────────────────── -->
+    <section class="section--sm" style="background:rgba(26,29,33,0.5);" aria-labelledby="map-title">
+      <div class="container reveal">
+        <p class="label" aria-hidden="true">LOCALISATION</p>
+        <h2 id="map-title" class="heading-3" style="margin-top:1rem;margin-bottom:2rem;">Treichville, Abidjan</h2>
+        <div style="border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--color-border-md);aspect-ratio:16/7;max-height:450px;">
+          <iframe
+            title="Localisation ETIGE — Treichville, Abidjan"
+            src="https://www.openstreetmap.org/export/embed.html?bbox=-4.025%2C5.295%2C-3.995%2C5.325&layer=mapnik&marker=5.31%2C-4.01"
+            style="width:100%;height:100%;min-height:320px;border:0;filter:grayscale(20%) contrast(1.1);"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen>
+          </iframe>
+        </div>
+        <p style="margin-top:1rem;font-family:var(--font-mono);font-size:var(--text-xs);color:var(--color-text-muted);">
+          Avenue 15, Rue 15 — Treichville ·
+          <a href="https://www.openstreetmap.org/?mlat=5.31&mlon=-4.01#map=15/5.31/-4.01"
+             target="_blank" rel="noopener noreferrer"
+             style="color:var(--color-accent);">Ouvrir dans OpenStreetMap ↗</a>
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="js/components.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

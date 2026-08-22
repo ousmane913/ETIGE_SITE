@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mentions légales et politique de confidentialité — ETIGE, Abidjan, Côte d'Ivoire.">
+  <title>Mentions légales — ETIGE</title>
+
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  
+  <!-- Anti-flicker script : applique le thème avant le rendu de la page -->
+  <script>
+    (function(){
+      try {
+        var stored = localStorage.getItem("etige-theme");
+        if (stored === "light" || stored === "dark") {
+          document.documentElement.setAttribute("data-theme", stored);
+        } else if (window.matchMedia("(prefers-color-scheme: light)").matches) {
+          document.documentElement.setAttribute("data-theme", "light");
+        }
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+
+  <main id="main-content">
+
+    <!-- ── PAGE HERO ─────────────────────────── -->
+    <section class="page-hero bg-hero bg-grid" aria-labelledby="legal-title">
+      <div class="container reveal" style="max-width:52rem;">
+        <p class="label" aria-hidden="true">LÉGAL</p>
+        <h1 id="legal-title" class="heading-1" style="margin-top:1rem;margin-bottom:1rem;">Mentions légales</h1>
+        <p style="font-size:var(--text-lg);color:var(--color-text-muted);line-height:1.7;">
+          Informations relatives à l'éditeur du site et au traitement des données personnelles.
+        </p>
+      </div>
+    </section>
+
+    <!-- ── CONTENU ────────────────────────────── -->
+    <section class="section bg-base" aria-label="Mentions légales et politique de confidentialité">
+      <div class="container reveal" style="max-width:52rem;display:flex;flex-direction:column;gap:1.5rem;">
+
+        <article class="card" style="padding:2rem;">
+          <h2 style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--color-accent);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:1.25rem;">
+            ÉDITEUR DU SITE
+          </h2>
+          <div style="font-size:var(--text-sm);color:var(--color-text-muted);line-height:1.8;display:flex;flex-direction:column;gap:0.75rem;">
+            <p><strong style="color:var(--color-text);">ETIGE</strong> — Entreprise des Travaux Télécom, Informatique, Génie Civil et Énergie</p>
+            <p>Siège social : Avenue 15, Rue 15 — Treichville, Abidjan, Côte d'Ivoire</p>
+            <p>Téléphone : <a href="tel:+2252721538310" style="color:var(--color-text);transition:color var(--transition-base);"
+                             onmouseover="this.style.color='var(--color-accent)'" onmouseout="this.style.color='var(--color-text)'">+225 27 21 53 83 10</a></p>
+            <p>Email : <a href="mailto:info@etige-services.ci" style="color:var(--color-text);transition:color var(--transition-base);"
+                         onmouseover="this.style.color='var(--color-accent)'" onmouseout="this.style.color='var(--color-text)'">info@etige-services.ci</a></p>
+            <p>Directeur de la publication : [À compléter — nom du responsable légal]</p>
+            <p>Immatriculation / RCCM : [À compléter]</p>
+          </div>
+        </article>
+
+        <article class="card" style="padding:2rem;">
+          <h2 style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--color-accent);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:1.25rem;">
+            HÉBERGEMENT
+          </h2>
+          <div style="font-size:var(--text-sm);color:var(--color-text-muted);line-height:1.8;display:flex;flex-direction:column;gap:0.75rem;">
+            <p>Ce site est hébergé par :</p>
+            <p>
+              <strong style="color:var(--color-text);">Render Services, Inc.</strong><br>
+              525 Brannan Street, Suite 300<br>
+              San Francisco, CA 94107, États-Unis<br>
+              <a href="https://render.com" target="_blank" rel="noopener noreferrer"
+                 style="color:var(--color-accent);">render.com ↗</a>
+            </p>
+          </div>
+        </article>
+
+        <article class="card" style="padding:2rem;">
+          <h2 style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--color-accent);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:1.25rem;">
+            PROPRIÉTÉ INTELLECTUELLE
+          </h2>
+          <p style="font-size:var(--text-sm);color:var(--color-text-muted);line-height:1.8;">
+            L'ensemble des éléments composant ce site (textes, visuels, logo, structure, code) est la propriété exclusive d'ETIGE ou de ses partenaires, sauf mention contraire. Toute reproduction, représentation ou diffusion, totale ou partielle, sans autorisation écrite préalable est interdite.
+          </p>
+        </article>
+
+        <article id="confidentialite" class="card" style="padding:2rem;scroll-margin-top:calc(var(--header-h) + 1rem);">
+          <h2 style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--color-accent);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:1.25rem;">
+            POLITIQUE DE CONFIDENTIALITÉ
+          </h2>
+          <div style="font-size:var(--text-sm);color:var(--color-text-muted);line-height:1.8;display:flex;flex-direction:column;gap:1rem;">
+            <p>
+              ETIGE s'engage à protéger les données personnelles transmises via le formulaire de contact ou par email. Les informations collectées (nom, email, téléphone, message) sont utilisées uniquement pour répondre à votre demande et assurer le suivi commercial ou technique.
+            </p>
+            <p>
+              Ces données ne sont ni vendues ni cédées à des tiers. Elles sont conservées pendant la durée nécessaire au traitement de votre demande, puis archivées ou supprimées conformément aux obligations légales applicables en Côte d'Ivoire.
+            </p>
+            <p>
+              Conformément à la réglementation en vigueur, vous disposez d'un droit d'accès, de rectification et de suppression de vos données. Pour l'exercer, contactez-nous à
+              <a href="mailto:info@etige-services.ci" style="color:var(--color-accent);">info@etige-services.ci</a>.
+            </p>
+            <p>
+              Ce site utilise des services tiers (polices Google Fonts, carte OpenStreetMap) susceptibles de collecter des données techniques de navigation. Aucun cookie publicitaire ou de traçage n'est déployé par ETIGE à ce jour.
+            </p>
+          </div>
+        </article>
+
+        <article class="card" style="padding:2rem;">
+          <h2 style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--color-accent);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:1.25rem;">
+            LIMITATION DE RESPONSABILITÉ
+          </h2>
+          <p style="font-size:var(--text-sm);color:var(--color-text-muted);line-height:1.8;">
+            ETIGE s'efforce d'assurer l'exactitude des informations publiées sur ce site. Toutefois, elle ne saurait être tenue responsable des omissions, inexactitudes ou indisponibilité temporaire du service. Les photographies de réalisations sont fournies à titre illustratif et peuvent ne pas refléter l'état actuel d'un site.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+
+  <script src="js/components.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
