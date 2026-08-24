@@ -131,8 +131,7 @@
             </a>
             <p class="footer-tagline">Entreprise des Travaux Télécom, Informatique, Génie Civil et Énergie.</p>
             <p class="footer-badge">
-          
-  
+              <strong>SOUS-TRAITANT DU</strong> Port Autonome d'Abidjan
             </p>
           </div>
 
