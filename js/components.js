@@ -130,9 +130,6 @@
               <img src="assets/images/logo.png" alt="Logo ETIGE" class="footer-logo">
             </a>
             <p class="footer-tagline">Entreprise des Travaux Télécom, Informatique, Génie Civil et Énergie.</p>
-            <p class="footer-badge">
-              <strong>SOUS-TRAITANT DU</strong> Port Autonome d'Abidjan
-            </p>
           </div>
 
           <nav class="footer-nav" aria-label="Navigation du pied de page">
