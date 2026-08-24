@@ -131,8 +131,8 @@
             </a>
             <p class="footer-tagline">Entreprise des Travaux Télécom, Informatique, Génie Civil et Énergie.</p>
             <p class="footer-badge">
-              <span class="badge-dot" aria-hidden="true"></span>
-              Sous-traitant agréé — Port Autonome d'Abidjan
+          
+  
             </p>
           </div>
 
@@ -170,7 +170,7 @@
 
         <div class="footer-bottom">
           <p class="footer-copy">© 2022–2026 ETIGE. Tous droits réservés.</p>
-          <p class="footer-domain">etigeservice.ci</p>
+          <p class="footer-domain">etige-services.ci</p>
         </div>
       </div>
     </footer>

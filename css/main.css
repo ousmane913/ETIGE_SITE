@@ -300,6 +300,60 @@ button {
 .text-muted  { color: var(--color-text-muted); }
 .text-mono   { font-family: var(--font-mono); }
 
+/* Témoignages clients */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+}
+.testimonial-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  padding: var(--space-8);
+  background: var(--color-bg-raised);
+  border: 1px solid var(--color-border);
+  border-top: 2px solid var(--color-accent);
+  border-radius: var(--radius-md);
+  transition: border-color var(--transition-base), transform var(--transition-base);
+}
+.testimonial-card:hover {
+  border-color: var(--color-accent);
+  transform: translateY(-3px);
+}
+.testimonial-card__mark {
+  color: var(--color-accent);
+  font-family: Georgia, serif;
+  font-size: 3.5rem;
+  line-height: 0.8;
+  margin-bottom: var(--space-4);
+}
+.testimonial-card blockquote {
+  flex: 1;
+  color: var(--color-text);
+  font-size: var(--text-lg);
+  line-height: 1.7;
+}
+.testimonial-card footer {
+  display: grid;
+  gap: var(--space-1);
+  margin-top: var(--space-6);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border);
+}
+.testimonial-card footer strong {
+  font-size: var(--text-sm);
+}
+.testimonial-card footer span {
+  color: var(--color-text-muted);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+}
+@media (min-width: 640px) {
+  .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
 
 /* ─────────────────────────────────────────────────────────────
    7. BOUTONS
