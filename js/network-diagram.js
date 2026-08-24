@@ -40,6 +40,9 @@
       red: true,
       label1: "Réseaux & IT",
       label2: "SWITCH/ROUTEUR/FIREWALL",
+      mobileLabel1: "Réseaux & IT",
+      mobileLabel2: "SWITCH / ROUTEUR",
+      mobileAnchor: "left",
       labelAnchor: "right",
     },
     
@@ -49,6 +52,9 @@
       red: false,
       label1: "Téléphonie IP",
       label2: "FH GIGABIT 24GHz",
+      mobileLabel1: "Téléphonie IP",
+      mobileLabel2: "FH GIGABIT",
+      mobileAnchor: "top",
       labelAnchor: "right",
     },
     
@@ -58,6 +64,9 @@
       red: false,
       label1: "Génie Civil & BTP",
       label2: "BÂTIMENTS, ROUTES",
+      mobileLabel1: "Génie Civil",
+      mobileLabel2: "BTP",
+      mobileAnchor: "right",
       labelAnchor: "left",
     },
     
@@ -67,7 +76,10 @@
       red: true,
       label1: "Pylônes Télécom",
       label2: "AUTOSTABLE/HAUBANES",
+      mobileLabel1: "Pylônes",
+      mobileLabel2: "AUTOSTABLE",
       labelAnchor: "left",
+      mobileAnchor: "right",
     },
     
     {
@@ -76,7 +88,10 @@
       red: false,
       label1: "Fibre Optique",
       label2: "MONO/MULTI",
+      mobileLabel1: "Fibre Optique",
+      mobileLabel2: "MONO / MULTI",
       labelAnchor: "right",
+      mobileAnchor: "bottom",
     },
     {
       id: "ENR",
@@ -84,7 +99,10 @@
       red: true,
       label1: "Énergie",
       label2: "BT/HT/SOLAIRE",
+      mobileLabel1: "Énergie",
+      mobileLabel2: "BT / HT / SOLAIRE",
       labelAnchor: "right",
+      mobileAnchor: "bottom",
     },
     {
       id: "CAM",
@@ -92,7 +110,10 @@
       red: true,
       label1: "TECHNOLOGIE",
       label2: "VIDEOSURVEILLANCE/TELEPHONIE",
+      mobileLabel1: "Vidéosurveillance",
+      mobileLabel2: "VIDÉOSURVEILLANCE",
       labelAnchor: "right",
+      mobileAnchor: "left",
     },
   ];
 
@@ -231,7 +252,10 @@
 
   /* ── Labels (toujours dans les limites du canvas) ─────── */
   function drawLabel(ctx, x, y, pole, w, h, C) {
-    const anchor = pole.labelAnchor || "right";
+    const compact = w < 520;
+    const anchor = compact
+      ? (pole.mobileAnchor || (x < w / 2 ? "right" : "left"))
+      : (pole.labelAnchor || "right");
     const isPAA  = !!pole.isPAA;
     const nodeR  = isPAA ? 33 : 22;
     const gap    = 10;
@@ -273,9 +297,11 @@
     ctx.textAlign    = align;
     ctx.textBaseline = (anchor === "bottom") ? "top" : (anchor === "top" ? "bottom" : "middle");
 
-    const fs1 = isPAA ? 12 : 10.5;
-    const fs2 = 9.5;
-    const lineH = isPAA ? 16 : 14;
+    const fs1 = compact ? 9 : (isPAA ? 12 : 10.5);
+    const fs2 = compact ? 7.5 : 9.5;
+    const lineH = compact ? 11 : (isPAA ? 16 : 14);
+    const label1 = compact && pole.mobileLabel1 ? pole.mobileLabel1 : pole.label1;
+    const label2 = compact ? "" : pole.label2;
 
     // Ligne 1 — nom
     ctx.font = `600 ${fs1}px Inter, sans-serif`;
@@ -283,28 +309,28 @@
 
     if (anchor === "top" || anchor === "bottom") {
       const offset = anchor === "top" ? -lineH : 0;
-      ctx.fillText(pole.label1, lx, ly + offset);
+      ctx.fillText(label1, lx, ly + offset);
       ctx.font = `500 ${fs2}px JetBrains Mono, monospace`;
       ctx.fillStyle = C.labelSub;
-      ctx.fillText(pole.label2, lx, ly + offset + lineH);
+      ctx.fillText(label2, lx, ly + offset + lineH);
     } else {
-      ctx.fillText(pole.label1, lx, ly - lineH / 2 - 1);
+      ctx.fillText(label1, lx, ly - lineH / 2 - 1);
       ctx.font = `500 ${fs2}px JetBrains Mono, monospace`;
       ctx.fillStyle = C.labelSub;
-      ctx.fillText(pole.label2, lx, ly + lineH / 2 + 1);
+      ctx.fillText(label2, lx, ly + lineH / 2 + 1);
     }
   }
 
   /* ── Label central ───────────────────────────────────── */
-  function drawCenterLabel(ctx, x, y, C) {
+  function drawCenterLabel(ctx, x, y, C, compact) {
     ctx.textAlign    = "center";
     ctx.textBaseline = "top";
-    ctx.font = "600 11px Inter, sans-serif";
+    ctx.font = `600 ${compact ? 9 : 11}px Inter, sans-serif`;
     ctx.fillStyle = C.labelMain;
-    ctx.fillText("ETIGE CORE NOC", x, y + 34);
-    ctx.font = "9.5px JetBrains Mono, monospace";
+    ctx.fillText("ETIGE CORE NOC", x, y + (compact ? 28 : 34));
+    ctx.font = `${compact ? 7.5 : 9.5}px JetBrains Mono, monospace`;
     ctx.fillStyle = C.labelSub;
-    ctx.fillText("CENTRAL_NOC_ACTIVE", x, y + 48);
+    ctx.fillText("CENTRAL_NOC_ACTIVE", x, y + (compact ? 39 : 48));
   }
 
   /* ── Init ─────────────────────────────────────────────── */
@@ -402,7 +428,7 @@
       poles.forEach(pole => drawLabel(ctx, pole.x, pole.y, pole, W, H, C));
 
       /* Label central */
-      drawCenterLabel(ctx, cx, cy, C);
+      drawCenterLabel(ctx, cx, cy, C, W < 520);
 
       if (!prefersReduced) animId = requestAnimationFrame(frame);
     }

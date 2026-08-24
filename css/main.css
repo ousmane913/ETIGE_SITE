@@ -877,7 +877,7 @@ button {
 
   .hero__diagram-canvas {
     aspect-ratio: 4/3;
-    min-height: 200px;
+    min-height: 320px;
   }
 
   .hero__chip--tl,
