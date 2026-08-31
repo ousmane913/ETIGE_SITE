@@ -106,19 +106,13 @@
               </p>
 
               <form id="contact-form"
-                    name="contact"
+                    action="https://formspree.io/f/VOTRE_ID_FORMSPREE"
                     method="POST"
-                    data-netlify="true"
-                    data-netlify-honeypot="bot-field"
-                    action="/merci.html"
                     style="display:flex;flex-direction:column;gap:1.25rem;"
                     novalidate>
 
-                <!-- Champs cachés requis par Netlify -->
-                <input type="hidden" name="form-name" value="contact">
-                <p style="display:none;">
-                  <label>Ne pas remplir : <input name="bot-field"></label>
-                </p>
+                <!-- URL de redirection après envoi (optionnel) -->
+                <input type="hidden" name="_next" value="https://etigesite.netlify.app/merci.html">
 
                 <div class="form-group">
                   <label for="name" class="form-label">Nom complet *</label>
