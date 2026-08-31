@@ -61,9 +61,9 @@
 
           <nav class="nav-desktop" aria-label="Navigation principale">
             <a href="index.html"        class="nav-link ${isActive("index.html")}">Accueil</a>
+            <a href="about.html"        class="nav-link ${isActive("about.html")}">À propos</a>
             <a href="services.html"     class="nav-link ${isActive("services.html")}">Services</a>
             <a href="realisations.html" class="nav-link ${isActive("realisations.html")}">Réalisations</a>
-            <a href="about.html"        class="nav-link ${isActive("about.html")}">À propos</a>
             <a href="contact.html"      class="nav-link ${isActive("contact.html")}">Contact</a>
           </nav>
 
@@ -108,9 +108,9 @@
           </button>
         </div>
         <a href="index.html"        class="mobile-nav-link ${isActive("index.html")}">Accueil</a>
+        <a href="about.html"        class="mobile-nav-link ${isActive("about.html")}">À propos</a>
         <a href="services.html"     class="mobile-nav-link ${isActive("services.html")}">Services</a>
         <a href="realisations.html" class="mobile-nav-link ${isActive("realisations.html")}">Réalisations</a>
-        <a href="about.html"        class="mobile-nav-link ${isActive("about.html")}">À propos</a>
         <a href="contact.html"      class="mobile-nav-link ${isActive("contact.html")}">Contact</a>
         <a href="contact.html#devis" class="btn btn-primary mt-auto">Demander un devis</a>
       </nav>
@@ -136,9 +136,9 @@
             <h4 class="footer-heading">Navigation</h4>
             <ul>
               <li><a href="index.html">Accueil</a></li>
+              <li><a href="about.html">À propos</a></li>
               <li><a href="services.html">Services</a></li>
               <li><a href="realisations.html">Réalisations</a></li>
-              <li><a href="about.html">À propos</a></li>
               <li><a href="contact.html">Contact</a></li>
             </ul>
           </nav>
