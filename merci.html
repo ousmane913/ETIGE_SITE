@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Message bien reçu — ETIGE vous répondra sous 48 heures ouvrées.">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Message envoyé — ETIGE</title>
+
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+
+  <!-- Anti-flicker : applique le thème avant le rendu -->
+  <script>
+    (function(){
+      try {
+        var stored = localStorage.getItem("etige-theme");
+        if (stored === "light" || stored === "dark") {
+          document.documentElement.setAttribute("data-theme", stored);
+        } else if (window.matchMedia("(prefers-color-scheme: light)").matches) {
+          document.documentElement.setAttribute("data-theme", "light");
+        }
+      } catch (e) {}
+    })();
+  </script>
+
+  <style>
+    .merci-section {
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .merci-icon {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: rgba(99, 179, 237, 0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+      font-size: 2rem;
+    }
+    .merci-card {
+      max-width: 520px;
+      margin: 0 auto;
+      padding: 3rem 2.5rem;
+      animation: fadeInUp 0.6s ease both;
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <main id="main-content">
+    <section class="merci-section bg-base bg-grid">
+      <div class="container">
+        <div class="card merci-card">
+
+          <div class="merci-icon">✅</div>
+
+          <p class="label" aria-hidden="true">MESSAGE ENVOYÉ</p>
+          <h1 class="heading-2" style="margin-top:1rem;margin-bottom:1rem;">
+            Merci pour votre message !
+          </h1>
+          <p style="font-size:var(--text-md);color:var(--color-text-muted);line-height:1.7;margin-bottom:2rem;">
+            Votre demande a bien été transmise à notre équipe.<br>
+            Nous vous répondrons dans un délai de <strong style="color:var(--color-text);">48 heures ouvrées</strong>.
+          </p>
+
+          <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+            <a href="/" class="btn btn-primary">Retour à l'accueil</a>
+            <a href="/contact.html" class="btn btn-ghost">Nouveau message</a>
+          </div>
+
+          <p style="margin-top:2rem;font-family:var(--font-mono);font-size:var(--text-xs);color:var(--color-text-muted);">
+            Une urgence ?
+            <a href="tel:+2252721538310" style="color:var(--color-accent);">+225 27 21 53 83 10</a>
+          </p>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/components.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
